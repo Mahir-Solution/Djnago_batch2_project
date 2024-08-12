@@ -23,7 +23,9 @@ namespace POS.Model
         public decimal sum { get; set; }
         public decimal creditsum { get; set; }
         public decimal totalpay { get; set; }
-
+        
+        public string source { get; set; }
+        public decimal Total_Customer_Payment { get; set; }
         public Payment()
         {
             PYID = -1;
@@ -39,23 +41,17 @@ namespace POS.Model
 
         }
 
-        public Payment(User us,Customer cus, int amt, DateTime d)
+        public Payment(User us,Customer cus, int amt, DateTime d,string s)
         {
             user = us;
             customer = cus;
             amount = amt;
             date = d;
+            source = s;
             
 
         }
-        //public Payment(DateTime d, int amount, string p, Supplier sup)
-        //{
-        //    date = d;
-        //    pamount = amount;
-        //    pmethod = p;
-        //    supplier = sup;
-
-        //}
+      
         public void FetchPayment()
         {
             try
@@ -78,10 +74,7 @@ namespace POS.Model
                     amount = dt.Rows[0].Field<int>("amount");
                     PYID = dt.Rows[0].Field<int>("PYID");
                 }
-                else
-                {
-                    PYID = -1;
-                }
+                
             }
             catch (Exception obj)
             {
@@ -122,14 +115,14 @@ namespace POS.Model
             
             try
             {
-                string query = "Insert into tblpayment(UID,CID,amount,date)values(@uid,@cid,@amount,@date)";
+                string query = "Insert into tblpayment(UID,CID,amount,date,source)values(@uid,@cid,@amount,@date,@source)";
                 SqlCommand cmd = new SqlCommand(query);
 
                 cmd.Parameters.AddWithValue("@uid", this.user.UID);
                 cmd.Parameters.AddWithValue("@cid", this.customer.CID);
                 cmd.Parameters.AddWithValue("@date", this.date);
                 cmd.Parameters.AddWithValue("@amount", this.amount);
-
+                cmd.Parameters.AddWithValue("@source", this.source);
 
                 DatabaseHandler db = new DatabaseHandler();
                 db.InsertData(cmd);
@@ -141,111 +134,7 @@ namespace POS.Model
             }
             return " ";
         }
-        //public  DataTable CheckPayment()
-        //{
-        //    string query = "select * from paymenttable where date =@date AND pmethod  = @pmethod AND supid = @supid";
-        //    //string query = "select p.date AS Date, p.pamount AS Amount,p.pmethod AS Method, s.name AS Supplier "+ 
-        //    //                "from paymenttable p inner join suppliertable s  on p.supid=s.supid" +
-        //    //                "where p.date =@date AND p.pmethod  = @pmethod AND s.supid = @supid";
-
-        //    SqlCommand cmd = new SqlCommand(query);
-        //    cmd.Parameters.AddWithValue("@date", this.date);
-        //    cmd.Parameters.AddWithValue("@pmethod", this.pmethod);
-        //    cmd.Parameters.AddWithValue("@supid", this.supplier.SupId);
-        //    DatabaseHandler db = new DatabaseHandler();
-        //    DataTable dt =  db.GetData(cmd);
-        //    if(dt.Rows.Count>0)
-        //    {
-        //        PId = dt.Rows[0].Field<int>("PId");
-        //        date = dt.Rows[0].Field<DateTime>("date");
-        //        supplier = new Supplier(dt.Rows[0].Field<int>("SupId"));
-        //        pamount = dt.Rows[0].Field<int>("pamount");
-        //        pmethod = dt.Rows[0].Field<string>("pmethod");
-
-        //        return dt;
-        //    }
-
-        //    return null;
-        //}
-
-        //public void CashPayment()
-        //{
-        //    if (supplier.SupId < 0)
-        //        MessageBox.Show("Error Supplier name is required");
-
-        //    try
-        //    {
-
-
-        //        string query = "select SUM(pamount) AS sum1 from paymenttable where supid = @supid AND pmethod = @pmethod AND date BETWEEN @sdate AND @edate";
-        //        SqlCommand cmd = new SqlCommand(query);
-        //        cmd.Parameters.AddWithValue("@supid", this.supplier.SupId);
-        //        cmd.Parameters.AddWithValue("@pmethod", this.pmethod);
-        //        cmd.Parameters.AddWithValue("@sdate", this.sdate);
-        //        cmd.Parameters.AddWithValue("@edate", this.edate);
-        //        DatabaseHandler db = new DatabaseHandler();
-        //        DataTable dt = db.GetData(cmd);
-        //        if (dt.Rows.Count > 0)
-        //        {
-        //            if (dt.Rows[0].Field<decimal?>("sum1") == null)
-        //            {
-        //                sum = 0;
-        //            }
-        //            else
-        //            {
-
-        //                sum = dt.Rows[0].Field<decimal>("sum1");
-        //            }
-
-
-
-        //        }
-
-        //    }
-        //    catch (Exception obj)
-        //    {
-        //        MessageBox.Show(obj.Message);
-        //    }
-
-        //}
-        //public void CreditPayment()
-        //{
-        //    if (supplier.SupId < 0)
-        //        MessageBox.Show("Error Supplier name is required");
-
-        //    try
-        //    {
-        //        string query = "select SUM(pamount) AS sum2 from paymenttable where supid = @supid AND pmethod = @pmethod AND date BETWEEN @sdate AND @edate";
-        //        SqlCommand cmd = new SqlCommand(query);
-        //        cmd.Parameters.AddWithValue("@supid", this.supplier.SupId);
-        //        cmd.Parameters.AddWithValue("@pmethod", this.pmethod);
-        //        cmd.Parameters.AddWithValue("@sdate", this.sdate);
-        //        cmd.Parameters.AddWithValue("@edate", this.edate);
-        //        DatabaseHandler db = new DatabaseHandler();
-        //        DataTable dt = db.GetData(cmd);
-        //        if (dt.Rows.Count > 0)
-        //        {
-        //            if (dt.Rows[0].Field<decimal?>("sum2") == null)
-        //            {
-        //                creditsum = -1;
-        //            }
-        //            else
-        //            {
-
-        //                creditsum = dt.Rows[0].Field<decimal>("sum2");
-        //            }
-
-
-
-        //        }
-
-        //    }
-        //    catch (Exception obj)
-        //    {
-        //        MessageBox.Show(obj.Message);
-        //    }
-
-        //}// end credit payment
+        
 
         public string Update()
         {
@@ -256,6 +145,7 @@ namespace POS.Model
             cmd.Parameters.AddWithValue("@amount", this.amount);
             cmd.Parameters.AddWithValue("@uid", this.user.UID);
             cmd.Parameters.AddWithValue("@cid", this.customer.CID);
+            //cmd.Parameters.AddWithValue("@s", this.source);
 
 
 
@@ -270,86 +160,26 @@ namespace POS.Model
                 return " Error Not update Data";
             }
         }
-        //public DataTable Amount()
-        //{
-        //    string query = "select pamount AS Amount, pmethod AS Method, date,PId from paymenttable where supid = @supid  AND date = @date AND pmethod = @pmethod";
-        //    SqlCommand cmd = new SqlCommand(query);
-
-        //    cmd.Parameters.AddWithValue("@supid", this.supplier.SupId);
-        //    cmd.Parameters.AddWithValue("@pmethod", this.pmethod);
-        //    cmd.Parameters.AddWithValue("@date", this.date);
-
-        //    DatabaseHandler db = new DatabaseHandler();
-        //    DataTable dt = db.GetData(cmd);
-        //    if (dt.Rows.Count > 0)
-        //    {
-        //        //supplier = new Supplier(dt.Rows[0].Field<int>("SupId"));
-
-        //        //date = dt.Rows[0].Field<DateTime>("date");
-        //        //pamount = dt.Rows[0].Field<decimal>("pamount");
-        //        //pmethod = dt.Rows[0].Field<string>("pmethod");
-        //        //PId = dt.Rows[0].Field<int>("PId");
-        //        return dt;
-        //    }
-        //    return dt;
-        //}
-        //public decimal supplierpay(DateTime d1)
-        //{
-        //    try
-        //    {
-        //        string query = "select SUM(pamount) AS pay from paymenttable where date = @sdate AND pmethod = 'cash' ";
-        //        SqlCommand cmd = new SqlCommand(query);
-        //        cmd.Parameters.AddWithValue("@sdate", d1);
-
-        //        DatabaseHandler db = new DatabaseHandler();
-        //        DataTable dt = db.GetData(cmd);
-        //        if (dt.Rows[0].Field<decimal?>("pay") == null)
-        //        {
-        //            return -1;
-        //        }
-        //        else
-        //        {
-
-        //            totalpay = dt.Rows[0].Field<decimal>("pay");
-        //            return totalpay;
-
-        //        }
-
-        //    }
-        //    catch (Exception obj)
-        //    {
-        //        MessageBox.Show(obj.Message);
-        //    }
-        //    return -1;
-        //}
-        //public decimal supplierpaydate(DateTime d1, DateTime d2)
-        //{
-        //    try
-        //    {
-        //        string query = "select SUM(pamount) AS pay from paymenttable where date BETWEEN @sdate AND @edate AND pmethod = 'cash' ";
-        //        SqlCommand cmd = new SqlCommand(query);
-        //        cmd.Parameters.AddWithValue("@sdate", d1);
-        //        cmd.Parameters.AddWithValue("@edate", d2);
-        //        DatabaseHandler db = new DatabaseHandler();
-        //        DataTable dt = db.GetData(cmd);
-        //        if (dt.Rows[0].Field<decimal?>("pay") == null)
-        //        {
-        //            return -1;
-        //        }
-        //        else
-        //        {
-
-        //            totalpay = dt.Rows[0].Field<decimal>("pay");
-        //            return totalpay;
-
-        //        }
-
-        //    }
-        //    catch (Exception obj)
-        //    {
-        //        MessageBox.Show(obj.Message);
-        //    }
-        //    return -1;
-        //}
+        public decimal Customer_Total_Payment()
+        {
+            try
+            {
+                string query = "select SUM(p.amount) as AMOUNT from tblpayment p inner join tblcustomer c on c.CID = p.CID where c.CID = @cid";
+                SqlCommand cmd = new SqlCommand(query);
+                
+                DatabaseHandler db = new DatabaseHandler();
+                DataTable dt = db.GetData(cmd);
+                if (dt.Rows.Count > 0)
+                {
+                    decimal? Total_Customer_Payment = dt.Rows[0].Field<decimal?>("AMOUNT");
+                    return Total_Customer_Payment ?? 0;
+                }
+            }
+            catch (Exception obj)
+            {
+                MessageBox.Show(obj.Message);
+            }
+            return 0;
+        }
     }
 }

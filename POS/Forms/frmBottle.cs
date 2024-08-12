@@ -43,5 +43,54 @@ namespace POS.Forms
 
 
         }
+
+        private void txtreturn_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+            if (char.IsDigit(ch) | ch == 8 | ch == 32)
+            {
+                e.Handled = false;
+
+            }
+
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void btnclear_Click(object sender, EventArgs e)
+        {
+            cbcustomer.SelectedIndex = -1;
+            cbsalesman.SelectedIndex = -1;
+            txtreturn.Clear();
+        }
+
+        private void btnexit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void txtsupsearch_TextChanged(object sender, EventArgs e)
+        {
+            CustomerSearch();
+        }
+        public void CustomerSearch()
+        {
+            try
+            {
+                DataTable dataTable = Customer.CustomerSearch(this.txtsupsearch.Text.Trim());
+                DataRow dataRow = dataTable.NewRow();
+
+                dataTable.Rows.InsertAt(dataRow, 0);
+                this.cbcustomer.ValueMember = "CID";
+                this.cbcustomer.DisplayMember = "cname";
+                this.cbcustomer.DataSource = dataTable;
+            }
+            catch (Exception obj)
+            {
+                MessageBox.Show(obj.Message);
+            }
+        }
     }
 }

@@ -48,7 +48,12 @@
             this.cbtype = new System.Windows.Forms.ComboBox();
             this.txtpassword = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.txtuid = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.pictureBox9 = new System.Windows.Forms.PictureBox();
+            this.txtuname = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.cbupdateuser = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -59,22 +64,17 @@
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.cbupdateusertype = new System.Windows.Forms.ComboBox();
             this.txtupdatepassword = new System.Windows.Forms.TextBox();
-            this.cbupdateuser = new System.Windows.Forms.ComboBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.pictureBox9 = new System.Windows.Forms.PictureBox();
-            this.txtuname = new System.Windows.Forms.TextBox();
-            this.txtuid = new System.Windows.Forms.TextBox();
+            this.panel3 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             this.SuspendLayout();
             // 
             // btnfetchdata
@@ -264,6 +264,7 @@
             this.txtname.Name = "txtname";
             this.txtname.Size = new System.Drawing.Size(143, 34);
             this.txtname.TabIndex = 0;
+            this.txtname.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtname_KeyPress);
             // 
             // cbtype
             // 
@@ -334,13 +335,69 @@
             this.panel1.Size = new System.Drawing.Size(858, 442);
             this.panel1.TabIndex = 1;
             // 
-            // panel3
+            // txtuid
             // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(88)))), ((int)(((byte)(108)))));
-            this.panel3.Location = new System.Drawing.Point(415, 15);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(10, 419);
-            this.panel3.TabIndex = 116;
+            this.txtuid.Location = new System.Drawing.Point(468, 388);
+            this.txtuid.Name = "txtuid";
+            this.txtuid.Size = new System.Drawing.Size(100, 20);
+            this.txtuid.TabIndex = 133;
+            this.txtuid.Visible = false;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label10.Font = new System.Drawing.Font("Bahnschrift Condensed", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(88)))), ((int)(((byte)(108)))));
+            this.label10.Location = new System.Drawing.Point(429, 209);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(77, 19);
+            this.label10.TabIndex = 132;
+            this.label10.Text = "Retype Name";
+            // 
+            // pictureBox9
+            // 
+            this.pictureBox9.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox9.Image")));
+            this.pictureBox9.Location = new System.Drawing.Point(432, 241);
+            this.pictureBox9.Name = "pictureBox9";
+            this.pictureBox9.Size = new System.Drawing.Size(52, 34);
+            this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox9.TabIndex = 131;
+            this.pictureBox9.TabStop = false;
+            // 
+            // txtuname
+            // 
+            this.txtuname.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtuname.Location = new System.Drawing.Point(484, 241);
+            this.txtuname.Multiline = true;
+            this.txtuname.Name = "txtuname";
+            this.txtuname.Size = new System.Drawing.Size(143, 34);
+            this.txtuname.TabIndex = 130;
+            this.txtuname.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtuname_KeyPress);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(88)))), ((int)(((byte)(108)))));
+            this.label9.Location = new System.Drawing.Point(461, 69);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(350, 39);
+            this.label9.TabIndex = 129;
+            this.label9.Text = "Update User Record";
+            // 
+            // cbupdateuser
+            // 
+            this.cbupdateuser.DropDownHeight = 120;
+            this.cbupdateuser.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbupdateuser.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbupdateuser.FormattingEnabled = true;
+            this.cbupdateuser.IntegralHeight = false;
+            this.cbupdateuser.ItemHeight = 24;
+            this.cbupdateuser.Location = new System.Drawing.Point(484, 146);
+            this.cbupdateuser.Name = "cbupdateuser";
+            this.cbupdateuser.Size = new System.Drawing.Size(143, 32);
+            this.cbupdateuser.TabIndex = 128;
             // 
             // label4
             // 
@@ -454,68 +511,13 @@
             this.txtupdatepassword.Size = new System.Drawing.Size(131, 34);
             this.txtupdatepassword.TabIndex = 119;
             // 
-            // cbupdateuser
+            // panel3
             // 
-            this.cbupdateuser.DropDownHeight = 120;
-            this.cbupdateuser.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbupdateuser.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbupdateuser.FormattingEnabled = true;
-            this.cbupdateuser.IntegralHeight = false;
-            this.cbupdateuser.ItemHeight = 24;
-            this.cbupdateuser.Location = new System.Drawing.Point(484, 146);
-            this.cbupdateuser.Name = "cbupdateuser";
-            this.cbupdateuser.Size = new System.Drawing.Size(143, 32);
-            this.cbupdateuser.TabIndex = 128;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(88)))), ((int)(((byte)(108)))));
-            this.label9.Location = new System.Drawing.Point(461, 69);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(350, 39);
-            this.label9.TabIndex = 129;
-            this.label9.Text = "Update User Record";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label10.Font = new System.Drawing.Font("Bahnschrift Condensed", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(88)))), ((int)(((byte)(108)))));
-            this.label10.Location = new System.Drawing.Point(429, 209);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(77, 19);
-            this.label10.TabIndex = 132;
-            this.label10.Text = "Retype Name";
-            // 
-            // pictureBox9
-            // 
-            this.pictureBox9.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox9.Image")));
-            this.pictureBox9.Location = new System.Drawing.Point(432, 241);
-            this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(52, 34);
-            this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox9.TabIndex = 131;
-            this.pictureBox9.TabStop = false;
-            // 
-            // txtuname
-            // 
-            this.txtuname.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtuname.Location = new System.Drawing.Point(484, 241);
-            this.txtuname.Multiline = true;
-            this.txtuname.Name = "txtuname";
-            this.txtuname.Size = new System.Drawing.Size(143, 34);
-            this.txtuname.TabIndex = 130;
-            // 
-            // txtuid
-            // 
-            this.txtuid.Location = new System.Drawing.Point(468, 388);
-            this.txtuid.Name = "txtuid";
-            this.txtuid.Size = new System.Drawing.Size(100, 20);
-            this.txtuid.TabIndex = 133;
-            this.txtuid.Visible = false;
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(88)))), ((int)(((byte)(108)))));
+            this.panel3.Location = new System.Drawing.Point(415, 15);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(10, 419);
+            this.panel3.TabIndex = 116;
             // 
             // frmUser
             // 
@@ -534,11 +536,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             this.ResumeLayout(false);
 
         }

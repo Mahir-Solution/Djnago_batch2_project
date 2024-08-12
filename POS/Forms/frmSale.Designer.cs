@@ -67,6 +67,7 @@
             this.txtoid = new System.Windows.Forms.TextBox();
             this.btnexit = new System.Windows.Forms.Button();
             this.btnclear = new System.Windows.Forms.Button();
+            this.txtsupsearch = new System.Windows.Forms.TextBox();
             label8 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -196,6 +197,7 @@
             this.txtreceived.Size = new System.Drawing.Size(169, 35);
             this.txtreceived.TabIndex = 172;
             this.txtreceived.UseSystemPasswordChar = true;
+            this.txtreceived.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtreceived_KeyPress);
             // 
             // label10
             // 
@@ -268,6 +270,7 @@
             this.txtreturn.Name = "txtreturn";
             this.txtreturn.Size = new System.Drawing.Size(110, 34);
             this.txtreturn.TabIndex = 165;
+            this.txtreturn.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtreturn_KeyPress);
             // 
             // pictureBox4
             // 
@@ -288,6 +291,7 @@
             this.txtdeliver.Size = new System.Drawing.Size(111, 34);
             this.txtdeliver.TabIndex = 163;
             this.txtdeliver.TextChanged += new System.EventHandler(this.txtdeliver_TextChanged);
+            this.txtdeliver.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtdeliver_KeyPress);
             // 
             // label6
             // 
@@ -319,6 +323,7 @@
             this.txtprice.Size = new System.Drawing.Size(130, 34);
             this.txtprice.TabIndex = 160;
             this.txtprice.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.txtprice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtprice_KeyPress);
             // 
             // cbproduct
             // 
@@ -357,6 +362,7 @@
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(226)))), ((int)(((byte)(240)))));
+            this.panel1.Controls.Add(this.txtsupsearch);
             this.panel1.Controls.Add(this.btorder);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.cbcustomer);
@@ -393,7 +399,7 @@
             this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label2.Font = new System.Drawing.Font("Bahnschrift Condensed", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(88)))), ((int)(((byte)(108)))));
-            this.label2.Location = new System.Drawing.Point(551, 8);
+            this.label2.Location = new System.Drawing.Point(564, 26);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(84, 19);
             this.label2.TabIndex = 78;
@@ -405,7 +411,7 @@
             this.cbcustomer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbcustomer.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbcustomer.FormattingEnabled = true;
-            this.cbcustomer.Location = new System.Drawing.Point(327, 28);
+            this.cbcustomer.Location = new System.Drawing.Point(327, 46);
             this.cbcustomer.Name = "cbcustomer";
             this.cbcustomer.Size = new System.Drawing.Size(204, 32);
             this.cbcustomer.TabIndex = 123;
@@ -414,7 +420,7 @@
             // 
             this.button7.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button7.BackgroundImage")));
             this.button7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button7.Location = new System.Drawing.Point(566, 31);
+            this.button7.Location = new System.Drawing.Point(566, 49);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(46, 32);
             this.button7.TabIndex = 77;
@@ -426,7 +432,7 @@
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label1.Font = new System.Drawing.Font("Bahnschrift Condensed", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(88)))), ((int)(((byte)(108)))));
-            this.label1.Location = new System.Drawing.Point(276, 1);
+            this.label1.Location = new System.Drawing.Point(276, 19);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(60, 19);
             this.label1.TabIndex = 122;
@@ -435,7 +441,7 @@
             // txtrandnumber
             // 
             this.txtrandnumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtrandnumber.Location = new System.Drawing.Point(611, 30);
+            this.txtrandnumber.Location = new System.Drawing.Point(611, 48);
             this.txtrandnumber.Multiline = true;
             this.txtrandnumber.Name = "txtrandnumber";
             this.txtrandnumber.ReadOnly = true;
@@ -447,7 +453,7 @@
             // 
             this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button1.Location = new System.Drawing.Point(282, 23);
+            this.button1.Location = new System.Drawing.Point(282, 41);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(46, 37);
             this.button1.TabIndex = 121;
@@ -459,7 +465,7 @@
             this.cbsalesman.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbsalesman.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbsalesman.FormattingEnabled = true;
-            this.cbsalesman.Location = new System.Drawing.Point(57, 31);
+            this.cbsalesman.Location = new System.Drawing.Point(57, 49);
             this.cbsalesman.Name = "cbsalesman";
             this.cbsalesman.Size = new System.Drawing.Size(192, 32);
             this.cbsalesman.TabIndex = 120;
@@ -470,7 +476,7 @@
             this.label5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label5.Font = new System.Drawing.Font("Bahnschrift Condensed", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(88)))), ((int)(((byte)(108)))));
-            this.label5.Location = new System.Drawing.Point(6, 5);
+            this.label5.Location = new System.Drawing.Point(6, 23);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(63, 19);
             this.label5.TabIndex = 119;
@@ -480,7 +486,7 @@
             // 
             this.button3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button3.BackgroundImage")));
             this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button3.Location = new System.Drawing.Point(12, 27);
+            this.button3.Location = new System.Drawing.Point(12, 45);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(46, 37);
             this.button3.TabIndex = 118;
@@ -521,6 +527,15 @@
             this.btnclear.TabIndex = 163;
             this.btnclear.UseVisualStyleBackColor = false;
             this.btnclear.Click += new System.EventHandler(this.btnclear_Click);
+            // 
+            // txtsupsearch
+            // 
+            this.txtsupsearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(226)))), ((int)(((byte)(240)))));
+            this.txtsupsearch.Location = new System.Drawing.Point(342, 22);
+            this.txtsupsearch.Name = "txtsupsearch";
+            this.txtsupsearch.Size = new System.Drawing.Size(174, 20);
+            this.txtsupsearch.TabIndex = 159;
+            this.txtsupsearch.TextChanged += new System.EventHandler(this.txtsupsearch_TextChanged);
             // 
             // frmSale
             // 
@@ -596,5 +611,6 @@
         private System.Windows.Forms.TextBox txtoid;
         private System.Windows.Forms.Button btnexit;
         private System.Windows.Forms.Button btnclear;
+        private System.Windows.Forms.TextBox txtsupsearch;
     }
 }

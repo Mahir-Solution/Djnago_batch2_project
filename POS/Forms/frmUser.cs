@@ -124,5 +124,35 @@ namespace POS.Forms
 
 
         }
+
+        private void txtname_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+            if (char.IsLetter(ch) | ch == 8 | ch == 32)
+            {
+                e.Handled = false;
+
+            }
+
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtuname_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+            if (char.IsLetter(ch) | ch == 8 | ch == 32)
+            {
+                e.Handled = false;
+
+            }
+
+            else
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

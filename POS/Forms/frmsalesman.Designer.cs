@@ -70,9 +70,10 @@
             this.txtupdatesupplier.Location = new System.Drawing.Point(445, 168);
             this.txtupdatesupplier.Multiline = true;
             this.txtupdatesupplier.Name = "txtupdatesupplier";
-            this.txtupdatesupplier.Size = new System.Drawing.Size(241, 37);
-            this.txtupdatesupplier.TabIndex = 120;
+            this.txtupdatesupplier.Size = new System.Drawing.Size(241, 33);
+            this.txtupdatesupplier.TabIndex = 5;
             this.txtupdatesupplier.UseSystemPasswordChar = true;
+            this.txtupdatesupplier.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtupdatesupplier_KeyPress);
             // 
             // label9
             // 
@@ -92,7 +93,7 @@
             this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button4.Location = new System.Drawing.Point(400, 168);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(46, 37);
+            this.button4.Size = new System.Drawing.Size(46, 33);
             this.button4.TabIndex = 118;
             this.button4.UseVisualStyleBackColor = true;
             // 
@@ -105,7 +106,7 @@
             this.cbsupplier1.Location = new System.Drawing.Point(445, 105);
             this.cbsupplier1.Name = "cbsupplier1";
             this.cbsupplier1.Size = new System.Drawing.Size(195, 32);
-            this.cbsupplier1.TabIndex = 117;
+            this.cbsupplier1.TabIndex = 4;
             // 
             // label7
             // 
@@ -166,9 +167,9 @@
             // 
             this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button1.Location = new System.Drawing.Point(405, 309);
+            this.button1.Location = new System.Drawing.Point(405, 317);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(46, 45);
+            this.button1.Size = new System.Drawing.Size(46, 37);
             this.button1.TabIndex = 111;
             this.button1.UseVisualStyleBackColor = true;
             // 
@@ -176,9 +177,9 @@
             // 
             this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
             this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button2.Location = new System.Drawing.Point(400, 231);
+            this.button2.Location = new System.Drawing.Point(400, 238);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(46, 42);
+            this.button2.Size = new System.Drawing.Size(46, 35);
             this.button2.TabIndex = 110;
             this.button2.UseVisualStyleBackColor = true;
             // 
@@ -206,22 +207,23 @@
             // txtlocation
             // 
             this.txtlocation.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtlocation.Location = new System.Drawing.Point(450, 309);
+            this.txtlocation.Location = new System.Drawing.Point(450, 317);
             this.txtlocation.Multiline = true;
             this.txtlocation.Name = "txtlocation";
-            this.txtlocation.Size = new System.Drawing.Size(236, 45);
-            this.txtlocation.TabIndex = 107;
+            this.txtlocation.Size = new System.Drawing.Size(236, 35);
+            this.txtlocation.TabIndex = 7;
             this.txtlocation.UseSystemPasswordChar = true;
             // 
             // txtcon
             // 
             this.txtcon.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtcon.Location = new System.Drawing.Point(445, 231);
+            this.txtcon.Location = new System.Drawing.Point(445, 238);
             this.txtcon.Multiline = true;
             this.txtcon.Name = "txtcon";
-            this.txtcon.Size = new System.Drawing.Size(241, 42);
-            this.txtcon.TabIndex = 106;
+            this.txtcon.Size = new System.Drawing.Size(241, 33);
+            this.txtcon.TabIndex = 6;
             this.txtcon.UseSystemPasswordChar = true;
+            this.txtcon.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtcon_KeyPress);
             // 
             // btnclear
             // 
@@ -277,9 +279,9 @@
             // 
             this.button8.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button8.BackgroundImage")));
             this.button8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button8.Location = new System.Drawing.Point(41, 297);
+            this.button8.Location = new System.Drawing.Point(41, 309);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(46, 45);
+            this.button8.Size = new System.Drawing.Size(46, 33);
             this.button8.TabIndex = 73;
             this.button8.UseVisualStyleBackColor = true;
             // 
@@ -287,9 +289,9 @@
             // 
             this.button7.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button7.BackgroundImage")));
             this.button7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button7.Location = new System.Drawing.Point(41, 219);
+            this.button7.Location = new System.Drawing.Point(41, 231);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(46, 42);
+            this.button7.Size = new System.Drawing.Size(46, 30);
             this.button7.TabIndex = 72;
             this.button7.UseVisualStyleBackColor = true;
             // 
@@ -297,9 +299,9 @@
             // 
             this.button6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button6.BackgroundImage")));
             this.button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button6.Location = new System.Drawing.Point(38, 134);
+            this.button6.Location = new System.Drawing.Point(38, 146);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(46, 45);
+            this.button6.Size = new System.Drawing.Size(46, 33);
             this.button6.TabIndex = 71;
             this.button6.UseVisualStyleBackColor = true;
             // 
@@ -322,10 +324,10 @@
             this.btnupdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnupdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnupdate.ForeColor = System.Drawing.Color.Transparent;
-            this.btnupdate.Location = new System.Drawing.Point(522, 388);
+            this.btnupdate.Location = new System.Drawing.Point(521, 397);
             this.btnupdate.Name = "btnupdate";
             this.btnupdate.Size = new System.Drawing.Size(68, 63);
-            this.btnupdate.TabIndex = 68;
+            this.btnupdate.TabIndex = 8;
             this.btnupdate.UseVisualStyleBackColor = false;
             this.btnupdate.Click += new System.EventHandler(this.btnupdate_Click);
             // 
@@ -336,7 +338,7 @@
             this.btnexit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnexit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnexit.ForeColor = System.Drawing.Color.DarkViolet;
-            this.btnexit.Location = new System.Drawing.Point(668, 10);
+            this.btnexit.Location = new System.Drawing.Point(693, 15);
             this.btnexit.Name = "btnexit";
             this.btnexit.Size = new System.Drawing.Size(39, 34);
             this.btnexit.TabIndex = 66;
@@ -354,38 +356,40 @@
             this.btnsave.Location = new System.Drawing.Point(121, 388);
             this.btnsave.Name = "btnsave";
             this.btnsave.Size = new System.Drawing.Size(67, 63);
-            this.btnsave.TabIndex = 65;
+            this.btnsave.TabIndex = 3;
             this.btnsave.UseVisualStyleBackColor = false;
             this.btnsave.Click += new System.EventHandler(this.btnsave_Click);
             // 
             // txtaddress
             // 
             this.txtaddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtaddress.Location = new System.Drawing.Point(86, 297);
+            this.txtaddress.Location = new System.Drawing.Point(86, 309);
             this.txtaddress.Multiline = true;
             this.txtaddress.Name = "txtaddress";
-            this.txtaddress.Size = new System.Drawing.Size(205, 45);
+            this.txtaddress.Size = new System.Drawing.Size(205, 33);
             this.txtaddress.TabIndex = 2;
             this.txtaddress.UseSystemPasswordChar = true;
             // 
             // txtcontact
             // 
             this.txtcontact.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtcontact.Location = new System.Drawing.Point(86, 219);
+            this.txtcontact.Location = new System.Drawing.Point(86, 231);
             this.txtcontact.Multiline = true;
             this.txtcontact.Name = "txtcontact";
-            this.txtcontact.Size = new System.Drawing.Size(205, 42);
+            this.txtcontact.Size = new System.Drawing.Size(205, 30);
             this.txtcontact.TabIndex = 1;
             this.txtcontact.UseSystemPasswordChar = true;
+            this.txtcontact.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtcontact_KeyPress);
             // 
             // txtname
             // 
             this.txtname.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtname.Location = new System.Drawing.Point(86, 134);
+            this.txtname.Location = new System.Drawing.Point(86, 146);
             this.txtname.Multiline = true;
             this.txtname.Name = "txtname";
-            this.txtname.Size = new System.Drawing.Size(205, 45);
+            this.txtname.Size = new System.Drawing.Size(205, 33);
             this.txtname.TabIndex = 0;
+            this.txtname.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtname_KeyPress);
             // 
             // panel1
             // 
@@ -401,6 +405,8 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(226)))), ((int)(((byte)(240)))));
+            this.panel2.Controls.Add(this.txtlocation);
+            this.panel2.Controls.Add(this.txtcon);
             this.panel2.Controls.Add(this.txtupdatesupplier);
             this.panel2.Controls.Add(this.label9);
             this.panel2.Controls.Add(this.button4);
@@ -414,8 +420,6 @@
             this.panel2.Controls.Add(this.button2);
             this.panel2.Controls.Add(this.button3);
             this.panel2.Controls.Add(this.btnfetch);
-            this.panel2.Controls.Add(this.txtlocation);
-            this.panel2.Controls.Add(this.txtcon);
             this.panel2.Controls.Add(this.btnclear);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.label1);

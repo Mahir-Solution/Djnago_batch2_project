@@ -23,15 +23,30 @@ namespace POS.Forms
             try
             {
                 string n = txtname.Text;
-                string p = txtcontact.Text;
+                string c1 = txtcontact.Text;
+                string c2 = txtcell2.Text;
+                string c3 = txtcell3.Text;
                 string ad = txtaddress.Text;
-                Customer obj = new Customer(n, p, ad);
-                string msg = obj.AddNew();
-                MessageBox.Show(msg);
-                txtaddress.Clear();
-                txtcontact.Clear();
-                txtname.Clear();
-                Customer.Customerlist(cbsupplier1);
+
+                Customer customer = new Customer();
+                string msg = customer.Searchdata(n, c1);
+                if ( msg != null )
+                {
+                    MessageBox.Show(msg);
+                }
+               
+                else
+                {
+                    Customer obj = new Customer(n, c1, c2, c3, ad);
+                    string msgs = obj.AddNew();
+                    MessageBox.Show(msgs);
+                    txtaddress.Clear();
+                    txtcontact.Clear();
+                    txtname.Clear();
+                    txtcell2.Clear();
+                    txtcell3.Clear();
+                    Customer.Customerlist(cbsupplier1);
+                }
 
             }
             catch (Exception obj)
@@ -47,6 +62,8 @@ namespace POS.Forms
             Customer obj = new Customer(id);
 
             txtcon.Text = obj.cell;
+            txtupdatecell2.Text = obj.cell2;
+            txtupudatecell3.Text = obj.cell3;
             txtupdatesupplier.Text = obj.cname;
             txtlocation.Text = obj.address;
         }
@@ -60,6 +77,8 @@ namespace POS.Forms
                 Customer obj = new Customer(id);
                 obj.CID = id;
                 obj.cell = txtcon.Text;
+                obj.cell2 = txtupdatecell2.Text;
+                obj.cell3 = txtupudatecell3.Text;
                 obj.cname = txtupdatesupplier.Text;
                 obj.address = txtlocation.Text;
 
@@ -70,11 +89,12 @@ namespace POS.Forms
 
 
                 txtupdatesupplier.Clear();
-                txtaddress.Clear();
-                txtcontact.Clear();
-                txtname.Clear();
-                txtcon.Clear();
                 txtlocation.Clear();
+                txtcon.Clear();
+                txtupdatecell2.Clear();
+                txtupudatecell3.Clear();
+                
+                
                 cbsupplier1.SelectedIndex = -1;
                 Customer.Customerlist(cbsupplier1);
             }
@@ -87,6 +107,120 @@ namespace POS.Forms
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
             Customer.Customerlist(cbsupplier1);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtname_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+            if (char.IsLetterOrDigit(ch) | ch == 8 | ch == 32)
+            {
+                e.Handled = false;
+
+            }
+
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtcontact_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+            if (char.IsDigit(ch) | ch == 8 | ch == 32)
+            {
+                e.Handled = false;
+
+            }
+
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtcon_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+            if (char.IsDigit(ch) | ch == 8 | ch == 32)
+            {
+                e.Handled = false;
+
+            }
+
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void btnexit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnclear_Click(object sender, EventArgs e)
+        {
+            txtaddress.Clear();
+            txtcontact.Clear();
+            txtname.Clear();
+
+            txtupdatesupplier.Clear();
+            txtaddress.Clear();
+            txtcell2.Clear();
+            txtcell3.Clear();
+
+            txtcon.Clear();
+            txtlocation.Clear();
+            cbsupplier1.SelectedIndex = -1;
+
+        }
+
+        private void txtupdatesupplier_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+            if (char.IsLetterOrDigit(ch) | ch == 8 | ch == 32)
+            {
+                e.Handled = false;
+
+            }
+
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtsupsearch_TextChanged(object sender, EventArgs e)
+        {
+            CustomerSearch();
+        }
+        public void CustomerSearch()
+        {
+            try
+            {
+                DataTable dataTable = Customer.CustomerSearch(this.txtsupsearch.Text.Trim());
+                DataRow dataRow = dataTable.NewRow();
+
+                dataTable.Rows.InsertAt(dataRow, 0);
+                this.cbsupplier1.ValueMember = "CID";
+                this.cbsupplier1.DisplayMember = "cname";
+                this.cbsupplier1.DataSource = dataTable;
+            }
+            catch (Exception obj)
+            {
+                MessageBox.Show(obj.Message);
+            }
         }
     }
 }

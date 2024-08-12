@@ -14,6 +14,8 @@ namespace POS.Model
         public int CID { get; set; }
         public string cname { get; set; }
         public string cell { get; set; }
+        public string cell2 { get; set; }
+        public string cell3 { get; set; }
         public string address { get; set; }
 
         public Customer()
@@ -23,11 +25,36 @@ namespace POS.Model
             cell = null;
             address = null;
         }
-        public Customer(string n, string p, string ad)
+        public string Searchdata(string n,string c)
+        {
+            try
+            {
+                string query = "select cname,cell from tblcustomer where cname LIKE @n OR cell LIKE @c ";
+                SqlCommand cmd = new SqlCommand(query);
+                cmd.Parameters.AddWithValue("@n", "%" + n + "%");
+                cmd.Parameters.AddWithValue("@c", "%" + c + "%");
+                DatabaseHandler db = new DatabaseHandler();
+                DataTable dt = db.GetData(cmd);
+                if (dt.Rows.Count > 0)
+                {
+                    return "this customer name or mobile nubmer is already exist";
+
+                }
+                
+            }
+            catch (Exception obj)
+            {
+                MessageBox.Show(obj.Message);
+            }
+            return null;
+        }
+        public Customer(string n, string p, string c2, string c3, string ad)
         {
 
             cname = n;
             cell = p;
+            cell2 = c2;
+            cell3 = c3;
             address = ad;
 
         }
@@ -45,25 +72,26 @@ namespace POS.Model
                 return "Error = supplier name is required";
             if (this.cell == null || this.cell == string.Empty)
                 return "Error = phone number is required";
-            if (this.address == null || this.address == string.Empty)
-                return "Error =  Address is required";
+           
 
             try
             {
-                string query = "Insert Into tblcustomer(cname,cell,address)Values(@name,@phone,@address)";
+                string query = "Insert Into tblcustomer(cname,cell,cell2,cell3,address)Values(@name,@phone,@phone2,@phone3,@address)";
                 SqlCommand cmd = new SqlCommand(query);
                 cmd.Parameters.AddWithValue("@name", this.cname);
                 cmd.Parameters.AddWithValue("@phone", this.cell);
+                cmd.Parameters.AddWithValue("@phone2", this.cell2);
+                cmd.Parameters.AddWithValue("@phone3", this.cell3);
                 cmd.Parameters.AddWithValue("@address", this.address);
                 DatabaseHandler db = new DatabaseHandler();
                 if (db.InsertData(cmd) > 0)
                 {
-                    return "salesman add successfully";
+                    return "Customer add successfully";
 
                 }
                 else
                 {
-                    return " Error ---  supplier not add try again";
+                    return " Error ---  Customer not add try again";
                 }
             }
             catch (Exception obj)
@@ -89,6 +117,10 @@ namespace POS.Model
 
                     cell = dt.Rows[0].Field<string>("cell");
 
+                    cell2 = dt.Rows[0].Field<string>("cell2");
+
+                    cell3 = dt.Rows[0].Field<string>("cell3");
+
                     address = dt.Rows[0].Field<string>("address");
                 }
             }
@@ -108,11 +140,13 @@ namespace POS.Model
             try
             {
 
-                string query = "Update tblcustomer set cname = @name, cell = @phone, address = @address where cid = @cid";
+                string query = "Update tblcustomer set cname = @name, cell = @phone, cell2 = @phone2,cell3 = @phone3, address = @address where cid = @cid";
                 SqlCommand cmd = new SqlCommand(query);
                 cmd.Parameters.AddWithValue("@cid", this.CID);
                 cmd.Parameters.AddWithValue("@name", this.cname);
                 cmd.Parameters.AddWithValue("@phone", this.cell);
+                cmd.Parameters.AddWithValue("@phone2", this.cell2);
+                cmd.Parameters.AddWithValue("@phone3", this.cell3);
                 cmd.Parameters.AddWithValue("@address", this.address);
 
 
@@ -202,9 +236,34 @@ namespace POS.Model
 
 
         }
-        public override string ToString()
+        public static DataTable CustomerSearch(string search)
         {
-            return $"{cname} - {cell}";
+            DataTable dataTable;
+            DatabaseHandler databaseHelper = new DatabaseHandler();
+            string str = "Select CID, cname from tblcustomer  WHERE cname LIKE @searchCustomer ORDER BY cname ASC";
+            string[] strArrays = search.Split(new char[] { ' ' });
+            string str1 = "%";
+            string[] strArrays1 = strArrays;
+            for (int i = 0; i < (int)strArrays1.Length; i++)
+            {
+                str1 = string.Concat(str1, strArrays1[i], "%");
+            }
+            SqlCommand sqlCommand = new SqlCommand(str);
+            sqlCommand.Parameters.AddWithValue("@searchCustomer", str1);
+            DataTable data = databaseHelper.GetData(sqlCommand);
+            if (data.Rows.Count <= 0)
+            {
+                DataRow dataRow = data.NewRow();
+                dataRow["CID"] = -1;
+                dataRow["cname"] = "No customer Found";
+                data.Rows.InsertAt(dataRow, 0);
+                dataTable = data;
+            }
+            else
+            {
+                dataTable = data;
+            }
+            return dataTable;
         }
     }
 }

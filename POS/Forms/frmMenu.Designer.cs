@@ -39,18 +39,19 @@
             this.button15 = new System.Windows.Forms.Button();
             this.button16 = new System.Windows.Forms.Button();
             this.TopPanel = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.lblusername = new System.Windows.Forms.Label();
+            this.txtuid = new System.Windows.Forms.TextBox();
             this.toprightpenel = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.lblusername = new System.Windows.Forms.Label();
             this.button13 = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
             this.button12 = new System.Windows.Forms.Button();
             this.button19 = new System.Windows.Forms.Button();
             this.button20 = new System.Windows.Forms.Button();
             this.LeftPanel = new System.Windows.Forms.Panel();
+            this.lbltype = new System.Windows.Forms.Label();
             this.button9 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
@@ -97,7 +98,7 @@
             // 
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Location = new System.Drawing.Point(40, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(10, 9);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(68, 62);
             this.pictureBox1.TabIndex = 0;
@@ -180,31 +181,22 @@
             this.TopPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.TopPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(88)))), ((int)(((byte)(108)))));
-            this.TopPanel.Controls.Add(this.textBox1);
-            this.TopPanel.Controls.Add(this.lblusername);
+            this.TopPanel.Controls.Add(this.txtuid);
             this.TopPanel.Controls.Add(this.toprightpenel);
+            this.TopPanel.Controls.Add(this.pictureBox1);
             this.TopPanel.Controls.Add(this.panel2);
             this.TopPanel.Location = new System.Drawing.Point(174, 0);
             this.TopPanel.Name = "TopPanel";
             this.TopPanel.Size = new System.Drawing.Size(846, 77);
             this.TopPanel.TabIndex = 78;
             // 
-            // textBox1
+            // txtuid
             // 
-            this.textBox1.Location = new System.Drawing.Point(108, 38);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 87;
-            // 
-            // lblusername
-            // 
-            this.lblusername.AutoSize = true;
-            this.lblusername.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblusername.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(226)))), ((int)(((byte)(240)))));
-            this.lblusername.Location = new System.Drawing.Point(10, 38);
-            this.lblusername.Name = "lblusername";
-            this.lblusername.Size = new System.Drawing.Size(0, 19);
-            this.lblusername.TabIndex = 86;
+            this.txtuid.Location = new System.Drawing.Point(143, 36);
+            this.txtuid.Name = "txtuid";
+            this.txtuid.Size = new System.Drawing.Size(100, 20);
+            this.txtuid.TabIndex = 87;
+            this.txtuid.Visible = false;
             // 
             // toprightpenel
             // 
@@ -244,6 +236,16 @@
             this.label1.Size = new System.Drawing.Size(456, 39);
             this.label1.TabIndex = 0;
             this.label1.Text = "Dashboard Reliance Water";
+            // 
+            // lblusername
+            // 
+            this.lblusername.AutoSize = true;
+            this.lblusername.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblusername.ForeColor = System.Drawing.Color.Red;
+            this.lblusername.Location = new System.Drawing.Point(12, 39);
+            this.lblusername.Name = "lblusername";
+            this.lblusername.Size = new System.Drawing.Size(0, 19);
+            this.lblusername.TabIndex = 86;
             // 
             // button13
             // 
@@ -309,10 +311,11 @@
             this.LeftPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.LeftPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(88)))), ((int)(((byte)(108)))));
+            this.LeftPanel.Controls.Add(this.lbltype);
             this.LeftPanel.Controls.Add(this.button9);
+            this.LeftPanel.Controls.Add(this.lblusername);
             this.LeftPanel.Controls.Add(this.button10);
             this.LeftPanel.Controls.Add(this.button5);
-            this.LeftPanel.Controls.Add(this.pictureBox1);
             this.LeftPanel.Controls.Add(this.button6);
             this.LeftPanel.Controls.Add(this.button8);
             this.LeftPanel.Controls.Add(this.button28);
@@ -336,6 +339,16 @@
             this.LeftPanel.Name = "LeftPanel";
             this.LeftPanel.Size = new System.Drawing.Size(178, 722);
             this.LeftPanel.TabIndex = 77;
+            // 
+            // lbltype
+            // 
+            this.lbltype.AutoSize = true;
+            this.lbltype.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbltype.ForeColor = System.Drawing.Color.Red;
+            this.lbltype.Location = new System.Drawing.Point(10, 12);
+            this.lbltype.Name = "lbltype";
+            this.lbltype.Size = new System.Drawing.Size(0, 20);
+            this.lbltype.TabIndex = 87;
             // 
             // button9
             // 
@@ -478,6 +491,7 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.LeftPanel.ResumeLayout(false);
+            this.LeftPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -514,6 +528,7 @@
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.Label lblusername;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtuid;
+        private System.Windows.Forms.Label lbltype;
     }
 }

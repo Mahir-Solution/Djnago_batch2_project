@@ -117,5 +117,65 @@ namespace POS.Forms
             txtlocation.Clear();
             cbsupplier1.SelectedIndex = -1;
         }
+
+        private void txtname_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+            if (char.IsLetter(ch) | ch == 8 | ch == 32)
+            {
+                e.Handled = false;
+
+            }
+
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtcontact_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+            if (char.IsDigit(ch) | ch == 8 | ch == 32)
+            {
+                e.Handled = false;
+
+            }
+
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtupdatesupplier_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+            if (char.IsLetter(ch) | ch == 8 | ch == 32)
+            {
+                e.Handled = false;
+
+            }
+
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtcon_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+            if (char.IsDigit(ch) | ch == 8 | ch == 32)
+            {
+                e.Handled = false;
+
+            }
+
+            else
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

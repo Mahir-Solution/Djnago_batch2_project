@@ -59,5 +59,35 @@ namespace POS.Forms
                 MessageBox.Show(obj.Message);
             }
         }
+
+        private void txtunit_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+            if (char.IsLetter(ch) | ch == 8 | ch == 32)
+            {
+                e.Handled = false;
+
+            }
+
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtprice_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+            if (char.IsDigit(ch) | ch == 8 | ch == 32)
+            {
+                e.Handled = false;
+
+            }
+
+            else
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

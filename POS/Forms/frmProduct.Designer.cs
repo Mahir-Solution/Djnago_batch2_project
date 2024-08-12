@@ -105,10 +105,10 @@
             this.btnsave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnsave.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnsave.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnsave.Location = new System.Drawing.Point(256, 272);
+            this.btnsave.Location = new System.Drawing.Point(255, 286);
             this.btnsave.Name = "btnsave";
             this.btnsave.Size = new System.Drawing.Size(67, 63);
-            this.btnsave.TabIndex = 92;
+            this.btnsave.TabIndex = 3;
             this.btnsave.UseVisualStyleBackColor = false;
             this.btnsave.Click += new System.EventHandler(this.btnsave_Click);
             // 
@@ -129,7 +129,8 @@
             this.txtunit.Multiline = true;
             this.txtunit.Name = "txtunit";
             this.txtunit.Size = new System.Drawing.Size(164, 34);
-            this.txtunit.TabIndex = 86;
+            this.txtunit.TabIndex = 1;
+            this.txtunit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtunit_KeyPress);
             // 
             // pictureBox1
             // 
@@ -148,7 +149,7 @@
             this.txtitem.Multiline = true;
             this.txtitem.Name = "txtitem";
             this.txtitem.Size = new System.Drawing.Size(162, 34);
-            this.txtitem.TabIndex = 84;
+            this.txtitem.TabIndex = 0;
             // 
             // label8
             // 
@@ -189,8 +190,9 @@
             this.txtprice.Multiline = true;
             this.txtprice.Name = "txtprice";
             this.txtprice.Size = new System.Drawing.Size(164, 34);
-            this.txtprice.TabIndex = 100;
+            this.txtprice.TabIndex = 2;
             this.txtprice.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.txtprice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtprice_KeyPress);
             // 
             // frmProduct
             // 

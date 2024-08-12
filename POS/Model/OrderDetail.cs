@@ -21,6 +21,7 @@ namespace POS.Model
         public int total { get; set; }
         public DateTime date { get; set; }
 
+        public decimal Total_Order_Customer { get; set; }
         public OrderDetail()
         {
             ODID = -1;
@@ -87,6 +88,28 @@ namespace POS.Model
                 MessageBox.Show(obj.Message);
             }
             return " ";
+        }
+        public decimal Customer_Total_Sale()
+        {
+
+            try
+            {
+                string query = "select c.cname SUM(od.total) as TOTAL from tblcustomer c inner join tblorder o on c.CID = o.CID inner join tbleorderdetail od on od.OID = o.OID GROUP BY  c.cname";
+                SqlCommand cmd = new SqlCommand(query);
+                
+                DatabaseHandler db = new DatabaseHandler();
+                DataTable dt = db.GetData(cmd);
+                if (dt.Rows.Count > 0 && dt.Rows[0]["TOTAL"] != DBNull.Value)
+                {
+                    decimal? Total_Order_Customer = dt.Rows[0].Field<decimal?>("TOTAL");
+                    return Total_Order_Customer ?? 0;
+                }
+            }
+            catch (Exception obj)
+            {
+                MessageBox.Show(obj.Message);
+            }
+            return 0;
         }
 
     }
