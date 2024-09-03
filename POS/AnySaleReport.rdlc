@@ -622,7 +622,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>    Grand_Total:-</Value>
+                <Value>    Bill_Total:-</Value>
                 <Style>
                   <FontFamily>elephant</FontFamily>
                 </Style>
@@ -633,7 +633,7 @@
         </Paragraphs>
         <rd:DefaultName>Textbox3</rd:DefaultName>
         <Top>1.79052in</Top>
-        <Left>4.60419in</Left>
+        <Left>2.47919in</Left>
         <Height>0.26042in</Height>
         <Width>1.41318in</Width>
         <ZIndex>6</ZIndex>
@@ -652,7 +652,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=Sum(Fields!total.Value)</Value>
+                <Value>=Sum(Fields!total.Value,"CustomerbillDataSet")</Value>
                 <Style>
                   <FontFamily>elephant</FontFamily>
                   <FontSize>12pt</FontSize>
@@ -666,10 +666,141 @@
         </Paragraphs>
         <rd:DefaultName>Textbox3</rd:DefaultName>
         <Top>1.79052in</Top>
-        <Left>6.08681in</Left>
+        <Left>3.96181in</Left>
         <Height>0.26042in</Height>
         <Width>0.79689in</Width>
         <ZIndex>7</ZIndex>
+        <Style>
+          <Border />
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox12">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>    Arrears</Value>
+                <Style>
+                  <FontFamily>elephant</FontFamily>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox3</rd:DefaultName>
+        <Top>1.79052in</Top>
+        <Left>0.38714in</Left>
+        <Height>0.26042in</Height>
+        <Width>0.92016in</Width>
+        <ZIndex>8</ZIndex>
+        <Style>
+          <Border />
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox18">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=Sum(Fields!PreviousTotal.Value, "BalanceDataSet") 
+- Sum(Fields!PreviousPaid.Value, "BalanceDataSet")
+-Sum(Fields!total.Value,"CustomerbillDataSet")</Value>
+                <Style>
+                  <FontFamily>elephant</FontFamily>
+                  <FontSize>12pt</FontSize>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox3</rd:DefaultName>
+        <Top>1.79052in</Top>
+        <Left>1.34547in</Left>
+        <Height>0.26042in</Height>
+        <Width>1.00351in</Width>
+        <ZIndex>9</ZIndex>
+        <Style>
+          <Border />
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox24">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>    Grand_Total:-</Value>
+                <Style>
+                  <FontFamily>elephant</FontFamily>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox3</rd:DefaultName>
+        <Top>1.79052in</Top>
+        <Left>4.77259in</Left>
+        <Height>0.26042in</Height>
+        <Width>1.25in</Width>
+        <ZIndex>10</ZIndex>
+        <Style>
+          <Border />
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox25">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=Sum(Fields!PreviousTotal.Value, "BalanceDataSet") 
+- Sum(Fields!PreviousPaid.Value, "BalanceDataSet")
+-Sum(Fields!total.Value,"CustomerbillDataSet")
++Sum(Fields!total.Value,"CustomerbillDataSet")</Value>
+                <Style>
+                  <FontFamily>elephant</FontFamily>
+                  <FontSize>12pt</FontSize>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox3</rd:DefaultName>
+        <Top>1.79052in</Top>
+        <Left>6.03648in</Left>
+        <Height>0.26042in</Height>
+        <Width>0.84722in</Width>
+        <ZIndex>11</ZIndex>
         <Style>
           <Border />
           <PaddingLeft>2pt</PaddingLeft>
@@ -865,6 +996,13 @@
       </ConnectionProperties>
       <rd:DataSourceID>15c243a5-2ac2-41bc-b6a3-9759e2a5d512</rd:DataSourceID>
     </DataSource>
+    <DataSource Name="BalanceDataSet">
+      <ConnectionProperties>
+        <DataProvider>System.Data.DataSet</DataProvider>
+        <ConnectString>/* Local Connection */</ConnectString>
+      </ConnectionProperties>
+      <rd:DataSourceID>612138c5-55fe-407d-a081-e8361d5a3c75</rd:DataSourceID>
+    </DataSource>
   </DataSources>
   <DataSets>
     <DataSet Name="CustomerbillDataSet">
@@ -917,6 +1055,34 @@
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
         <rd:TableAdapterName>SaleViewTableAdapter</rd:TableAdapterName>
+      </rd:DataSetInfo>
+    </DataSet>
+    <DataSet Name="BalanceDataSet">
+      <Query>
+        <DataSourceName>BalanceDataSet</DataSourceName>
+        <CommandText>/* Local Query */</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="PreviousPaid">
+          <DataField>PreviousPaid</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="CID">
+          <DataField>CID</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="PreviousTotal">
+          <DataField>PreviousTotal</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+      </Fields>
+      <rd:DataSetInfo>
+        <rd:DataSetName>BalanceDataSet</rd:DataSetName>
+        <rd:SchemaPath>E:\POS_Water\POS\BalanceDataSet.xsd</rd:SchemaPath>
+        <rd:TableName>tblorder</rd:TableName>
+        <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
+        <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
+        <rd:TableAdapterName>tblorderTableAdapter</rd:TableAdapterName>
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>

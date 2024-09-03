@@ -47,7 +47,7 @@ namespace POS.Forms
                         command.ExecuteNonQuery();
                     }
                 }
-                MessageBox.Show($"Database backup successful! Backup file: {backupFileReliance}", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show($"Database backup successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (SqlException sqlEx)
             {

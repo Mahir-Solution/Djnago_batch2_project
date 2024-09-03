@@ -25,7 +25,11 @@ namespace POS.Forms
         private void btnfetch_Click(object sender, EventArgs e)
         {
             int sid = Convert.ToInt32(cbsupplier1.SelectedValue);
+            DateTime sd = dateTimePicker1.Value.Date;
+            DateTime ed = dateTimePicker2.Value.Date;
             Varibale.sid = sid;
+            Varibale.sdate = sd;
+            Varibale.edate = ed;
             Salesmanform frm = new Salesmanform();
             frm.Show();
 

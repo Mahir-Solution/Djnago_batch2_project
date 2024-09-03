@@ -30,39 +30,62 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.CustomerbillDataSet = new POS.CustomerbillDataSet();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.SaleViewBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.CustomerbillDataSet = new POS.CustomerbillDataSet();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.SaleViewTableAdapter = new POS.CustomerbillDataSetTableAdapters.SaleViewTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.CustomerbillDataSet)).BeginInit();
+            this.BalanceDataSet = new POS.BalanceDataSet();
+            this.tblorderBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tblorderTableAdapter = new POS.BalanceDataSetTableAdapters.tblorderTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.SaleViewBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CustomerbillDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BalanceDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblorderBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // reportViewer1
-            // 
-            this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            reportDataSource1.Name = "CustomerbillDataSet";
-            reportDataSource1.Value = this.SaleViewBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "POS.AnySaleReport.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(0, 0);
-            this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.Size = new System.Drawing.Size(670, 557);
-            this.reportViewer1.TabIndex = 0;
-            // 
-            // CustomerbillDataSet
-            // 
-            this.CustomerbillDataSet.DataSetName = "CustomerbillDataSet";
-            this.CustomerbillDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // SaleViewBindingSource
             // 
             this.SaleViewBindingSource.DataMember = "SaleView";
             this.SaleViewBindingSource.DataSource = this.CustomerbillDataSet;
             // 
+            // CustomerbillDataSet
+            // 
+            this.CustomerbillDataSet.DataSetName = "CustomerbillDataSet";
+            this.CustomerbillDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // reportViewer1
+            // 
+            this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            reportDataSource1.Name = "CustomerbillDataSet";
+            reportDataSource1.Value = this.SaleViewBindingSource;
+            reportDataSource2.Name = "BalanceDataSet";
+            reportDataSource2.Value = this.tblorderBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource2);
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "POS.AnySaleReport.rdlc";
+            this.reportViewer1.Location = new System.Drawing.Point(0, 0);
+            this.reportViewer1.Name = "reportViewer1";
+            this.reportViewer1.Size = new System.Drawing.Size(670, 557);
+            this.reportViewer1.TabIndex = 0;
+            // 
             // SaleViewTableAdapter
             // 
             this.SaleViewTableAdapter.ClearBeforeFill = true;
+            // 
+            // BalanceDataSet
+            // 
+            this.BalanceDataSet.DataSetName = "BalanceDataSet";
+            this.BalanceDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // tblorderBindingSource
+            // 
+            this.tblorderBindingSource.DataMember = "tblorder";
+            this.tblorderBindingSource.DataSource = this.BalanceDataSet;
+            // 
+            // tblorderTableAdapter
+            // 
+            this.tblorderTableAdapter.ClearBeforeFill = true;
             // 
             // Anysaleform
             // 
@@ -73,8 +96,10 @@
             this.Name = "Anysaleform";
             this.Text = "Anysaleform";
             this.Load += new System.EventHandler(this.Anysaleform_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.CustomerbillDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SaleViewBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CustomerbillDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BalanceDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblorderBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -85,5 +110,8 @@
         private System.Windows.Forms.BindingSource SaleViewBindingSource;
         private CustomerbillDataSet CustomerbillDataSet;
         private CustomerbillDataSetTableAdapters.SaleViewTableAdapter SaleViewTableAdapter;
+        private System.Windows.Forms.BindingSource tblorderBindingSource;
+        private BalanceDataSet BalanceDataSet;
+        private BalanceDataSetTableAdapters.tblorderTableAdapter tblorderTableAdapter;
     }
 }

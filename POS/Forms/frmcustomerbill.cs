@@ -66,5 +66,17 @@ namespace POS.Forms
                 MessageBox.Show(obj.Message);
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            DateTime sd = dateTimePicker1.Value.Date;
+            DateTime ed = dateTimePicker2.Value.Date;
+            int cid = Convert.ToInt32(cbsupplier1.SelectedValue);
+            Varibale.sdate = sd;
+            Varibale.edate = ed;
+            Varibale.cid = cid;
+            AnySaleThermalForm obj = new AnySaleThermalForm();
+            obj.Show();
+        } 
     }
 }

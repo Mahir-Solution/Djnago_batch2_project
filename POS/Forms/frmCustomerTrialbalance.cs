@@ -81,6 +81,26 @@ namespace POS.Forms
                     DataTable dataTable = new DataTable();
                     dataAdapter.Fill(dataTable);
                     dataGridView1.DataSource = dataTable; // Assuming you have a DataGridView named dataGridView1
+                    dataGridView1.BackgroundColor = Color.FromArgb(220, 226, 240);
+                    dataGridView1.AlternatingRowsDefaultCellStyle = new DataGridViewCellStyle
+                    {
+                        BackColor = Color.White,
+                    };
+                    dataGridView1.DefaultCellStyle = new DataGridViewCellStyle
+                    {
+                        BackColor = Color.LightBlue,
+                        ForeColor = Color.Black,
+                        Font = new Font("Arial", 12, FontStyle.Bold)
+                    };
+                    dataGridView1.ColumnHeadersDefaultCellStyle = new DataGridViewCellStyle
+                    {
+                        Font = new Font("Arial", 14, FontStyle.Bold),
+                    };
+                    dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                    if (dataGridView1.Columns.Contains("Customer"))
+                    {
+                        dataGridView1.Columns["Customer"].Width = 300; // Set the desired width for the "Customer" column
+                    }
                 }
             }
             catch(Exception  obj)

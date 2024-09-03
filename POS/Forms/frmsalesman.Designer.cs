@@ -34,7 +34,6 @@
             this.button4 = new System.Windows.Forms.Button();
             this.cbsupplier1 = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -60,6 +59,7 @@
             this.txtname = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -118,14 +118,6 @@
             this.label7.Size = new System.Drawing.Size(244, 31);
             this.label7.TabIndex = 116;
             this.label7.Text = "Update Salesman";
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(88)))), ((int)(((byte)(108)))));
-            this.panel3.Location = new System.Drawing.Point(358, 2);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(10, 471);
-            this.panel3.TabIndex = 115;
             // 
             // label3
             // 
@@ -405,6 +397,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(226)))), ((int)(((byte)(240)))));
+            this.panel2.Controls.Add(this.panel3);
             this.panel2.Controls.Add(this.txtlocation);
             this.panel2.Controls.Add(this.txtcon);
             this.panel2.Controls.Add(this.txtupdatesupplier);
@@ -412,7 +405,6 @@
             this.panel2.Controls.Add(this.button4);
             this.panel2.Controls.Add(this.cbsupplier1);
             this.panel2.Controls.Add(this.label7);
-            this.panel2.Controls.Add(this.panel3);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.label5);
@@ -441,6 +433,14 @@
             this.panel2.TabIndex = 0;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(88)))), ((int)(((byte)(108)))));
+            this.panel3.Location = new System.Drawing.Point(345, 15);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(17, 473);
+            this.panel3.TabIndex = 120;
+            // 
             // frmsalesman
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -466,7 +466,6 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.ComboBox cbsupplier1;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
@@ -492,5 +491,6 @@
         private System.Windows.Forms.TextBox txtname;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel3;
     }
 }

@@ -25,7 +25,7 @@ namespace POS.Model
         public decimal totalpay { get; set; }
         
         public string source { get; set; }
-        public decimal Total_Customer_Payment { get; set; }
+        public int Total_Customer_Payment { get; set; }
         public Payment()
         {
             PYID = -1;
@@ -160,18 +160,18 @@ namespace POS.Model
                 return " Error Not update Data";
             }
         }
-        public decimal Customer_Total_Payment()
+        public int Customer_Total_Payment(int cid)
         {
             try
             {
                 string query = "select SUM(p.amount) as AMOUNT from tblpayment p inner join tblcustomer c on c.CID = p.CID where c.CID = @cid";
                 SqlCommand cmd = new SqlCommand(query);
-                
+                cmd.Parameters.AddWithValue("@cid", cid);
                 DatabaseHandler db = new DatabaseHandler();
                 DataTable dt = db.GetData(cmd);
                 if (dt.Rows.Count > 0)
                 {
-                    decimal? Total_Customer_Payment = dt.Rows[0].Field<decimal?>("AMOUNT");
+                    int? Total_Customer_Payment = dt.Rows[0].Field<int?>("AMOUNT");
                     return Total_Customer_Payment ?? 0;
                 }
             }

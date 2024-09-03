@@ -20,17 +20,17 @@ namespace POS {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("PaymentReceivedDataSet")]
+    [global::System.Xml.Serialization.XmlRootAttribute("WasteStockDataSet")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class PaymentReceivedDataSet : global::System.Data.DataSet {
+    public partial class WasteStockDataSet : global::System.Data.DataSet {
         
-        private PaymentViewDataTable tablePaymentView;
+        private WasteStockViewDataTable tableWasteStockView;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public PaymentReceivedDataSet() {
+        public WasteStockDataSet() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -41,7 +41,7 @@ namespace POS {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        protected PaymentReceivedDataSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected WasteStockDataSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -54,8 +54,8 @@ namespace POS {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["PaymentView"] != null)) {
-                    base.Tables.Add(new PaymentViewDataTable(ds.Tables["PaymentView"]));
+                if ((ds.Tables["WasteStockView"] != null)) {
+                    base.Tables.Add(new WasteStockViewDataTable(ds.Tables["WasteStockView"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -79,9 +79,9 @@ namespace POS {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public PaymentViewDataTable PaymentView {
+        public WasteStockViewDataTable WasteStockView {
             get {
-                return this.tablePaymentView;
+                return this.tableWasteStockView;
             }
         }
         
@@ -127,7 +127,7 @@ namespace POS {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            PaymentReceivedDataSet cln = ((PaymentReceivedDataSet)(base.Clone()));
+            WasteStockDataSet cln = ((WasteStockDataSet)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -152,8 +152,8 @@ namespace POS {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["PaymentView"] != null)) {
-                    base.Tables.Add(new PaymentViewDataTable(ds.Tables["PaymentView"]));
+                if ((ds.Tables["WasteStockView"] != null)) {
+                    base.Tables.Add(new WasteStockViewDataTable(ds.Tables["WasteStockView"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -188,10 +188,10 @@ namespace POS {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tablePaymentView = ((PaymentViewDataTable)(base.Tables["PaymentView"]));
+            this.tableWasteStockView = ((WasteStockViewDataTable)(base.Tables["WasteStockView"]));
             if ((initTable == true)) {
-                if ((this.tablePaymentView != null)) {
-                    this.tablePaymentView.InitVars();
+                if ((this.tableWasteStockView != null)) {
+                    this.tableWasteStockView.InitVars();
                 }
             }
         }
@@ -199,18 +199,18 @@ namespace POS {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "PaymentReceivedDataSet";
+            this.DataSetName = "WasteStockDataSet";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/PaymentReceivedDataSet.xsd";
+            this.Namespace = "http://tempuri.org/WasteStockDataSet.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tablePaymentView = new PaymentViewDataTable();
-            base.Tables.Add(this.tablePaymentView);
+            this.tableWasteStockView = new WasteStockViewDataTable();
+            base.Tables.Add(this.tableWasteStockView);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private bool ShouldSerializePaymentView() {
+        private bool ShouldSerializeWasteStockView() {
             return false;
         }
         
@@ -225,7 +225,7 @@ namespace POS {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            PaymentReceivedDataSet ds = new PaymentReceivedDataSet();
+            WasteStockDataSet ds = new WasteStockDataSet();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -270,33 +270,29 @@ namespace POS {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public delegate void PaymentViewRowChangeEventHandler(object sender, PaymentViewRowChangeEvent e);
+        public delegate void WasteStockViewRowChangeEventHandler(object sender, WasteStockViewRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class PaymentViewDataTable : global::System.Data.TypedTableBase<PaymentViewRow> {
+        public partial class WasteStockViewDataTable : global::System.Data.TypedTableBase<WasteStockViewRow> {
             
-            private global::System.Data.DataColumn columnCID;
+            private global::System.Data.DataColumn columnPID;
             
-            private global::System.Data.DataColumn columncname;
+            private global::System.Data.DataColumn columnpname;
             
             private global::System.Data.DataColumn columndate;
             
-            private global::System.Data.DataColumn columnamount;
+            private global::System.Data.DataColumn columnqty;
             
-            private global::System.Data.DataColumn columnsource;
-            
-            private global::System.Data.DataColumn columnUID;
-            
-            private global::System.Data.DataColumn columnuname;
+            private global::System.Data.DataColumn columnreason;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public PaymentViewDataTable() {
-                this.TableName = "PaymentView";
+            public WasteStockViewDataTable() {
+                this.TableName = "WasteStockView";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -304,7 +300,7 @@ namespace POS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal PaymentViewDataTable(global::System.Data.DataTable table) {
+            internal WasteStockViewDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -321,24 +317,24 @@ namespace POS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected PaymentViewDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected WasteStockViewDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn CIDColumn {
+            public global::System.Data.DataColumn PIDColumn {
                 get {
-                    return this.columnCID;
+                    return this.columnPID;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn cnameColumn {
+            public global::System.Data.DataColumn pnameColumn {
                 get {
-                    return this.columncname;
+                    return this.columnpname;
                 }
             }
             
@@ -352,33 +348,17 @@ namespace POS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn amountColumn {
+            public global::System.Data.DataColumn qtyColumn {
                 get {
-                    return this.columnamount;
+                    return this.columnqty;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn sourceColumn {
+            public global::System.Data.DataColumn reasonColumn {
                 get {
-                    return this.columnsource;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn UIDColumn {
-                get {
-                    return this.columnUID;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn unameColumn {
-                get {
-                    return this.columnuname;
+                    return this.columnreason;
                 }
             }
             
@@ -393,58 +373,56 @@ namespace POS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public PaymentViewRow this[int index] {
+            public WasteStockViewRow this[int index] {
                 get {
-                    return ((PaymentViewRow)(this.Rows[index]));
+                    return ((WasteStockViewRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event PaymentViewRowChangeEventHandler PaymentViewRowChanging;
+            public event WasteStockViewRowChangeEventHandler WasteStockViewRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event PaymentViewRowChangeEventHandler PaymentViewRowChanged;
+            public event WasteStockViewRowChangeEventHandler WasteStockViewRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event PaymentViewRowChangeEventHandler PaymentViewRowDeleting;
+            public event WasteStockViewRowChangeEventHandler WasteStockViewRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event PaymentViewRowChangeEventHandler PaymentViewRowDeleted;
+            public event WasteStockViewRowChangeEventHandler WasteStockViewRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void AddPaymentViewRow(PaymentViewRow row) {
+            public void AddWasteStockViewRow(WasteStockViewRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public PaymentViewRow AddPaymentViewRow(int CID, string cname, System.DateTime date, int amount, string source, int UID, string uname) {
-                PaymentViewRow rowPaymentViewRow = ((PaymentViewRow)(this.NewRow()));
+            public WasteStockViewRow AddWasteStockViewRow(int PID, string pname, System.DateTime date, int qty, string reason) {
+                WasteStockViewRow rowWasteStockViewRow = ((WasteStockViewRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        CID,
-                        cname,
+                        PID,
+                        pname,
                         date,
-                        amount,
-                        source,
-                        UID,
-                        uname};
-                rowPaymentViewRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowPaymentViewRow);
-                return rowPaymentViewRow;
+                        qty,
+                        reason};
+                rowWasteStockViewRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowWasteStockViewRow);
+                return rowWasteStockViewRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public PaymentViewRow FindByCID(int CID) {
-                return ((PaymentViewRow)(this.Rows.Find(new object[] {
-                            CID})));
+            public WasteStockViewRow FindByPID(int PID) {
+                return ((WasteStockViewRow)(this.Rows.Find(new object[] {
+                            PID})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                PaymentViewDataTable cln = ((PaymentViewDataTable)(base.Clone()));
+                WasteStockViewDataTable cln = ((WasteStockViewDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -452,72 +430,64 @@ namespace POS {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new PaymentViewDataTable();
+                return new WasteStockViewDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
-                this.columnCID = base.Columns["CID"];
-                this.columncname = base.Columns["cname"];
+                this.columnPID = base.Columns["PID"];
+                this.columnpname = base.Columns["pname"];
                 this.columndate = base.Columns["date"];
-                this.columnamount = base.Columns["amount"];
-                this.columnsource = base.Columns["source"];
-                this.columnUID = base.Columns["UID"];
-                this.columnuname = base.Columns["uname"];
+                this.columnqty = base.Columns["qty"];
+                this.columnreason = base.Columns["reason"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             private void InitClass() {
-                this.columnCID = new global::System.Data.DataColumn("CID", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCID);
-                this.columncname = new global::System.Data.DataColumn("cname", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columncname);
+                this.columnPID = new global::System.Data.DataColumn("PID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPID);
+                this.columnpname = new global::System.Data.DataColumn("pname", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnpname);
                 this.columndate = new global::System.Data.DataColumn("date", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columndate);
-                this.columnamount = new global::System.Data.DataColumn("amount", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnamount);
-                this.columnsource = new global::System.Data.DataColumn("source", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnsource);
-                this.columnUID = new global::System.Data.DataColumn("UID", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnUID);
-                this.columnuname = new global::System.Data.DataColumn("uname", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnuname);
+                this.columnqty = new global::System.Data.DataColumn("qty", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnqty);
+                this.columnreason = new global::System.Data.DataColumn("reason", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnreason);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnCID}, true));
-                this.columnCID.AllowDBNull = false;
-                this.columnCID.Unique = true;
-                this.columncname.MaxLength = 50;
-                this.columnsource.MaxLength = 50;
-                this.columnUID.AllowDBNull = false;
-                this.columnuname.MaxLength = 50;
+                                this.columnPID}, true));
+                this.columnPID.AllowDBNull = false;
+                this.columnPID.Unique = true;
+                this.columnpname.MaxLength = 50;
+                this.columnreason.MaxLength = 2147483647;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public PaymentViewRow NewPaymentViewRow() {
-                return ((PaymentViewRow)(this.NewRow()));
+            public WasteStockViewRow NewWasteStockViewRow() {
+                return ((WasteStockViewRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new PaymentViewRow(builder);
+                return new WasteStockViewRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(PaymentViewRow);
+                return typeof(WasteStockViewRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.PaymentViewRowChanged != null)) {
-                    this.PaymentViewRowChanged(this, new PaymentViewRowChangeEvent(((PaymentViewRow)(e.Row)), e.Action));
+                if ((this.WasteStockViewRowChanged != null)) {
+                    this.WasteStockViewRowChanged(this, new WasteStockViewRowChangeEvent(((WasteStockViewRow)(e.Row)), e.Action));
                 }
             }
             
@@ -525,8 +495,8 @@ namespace POS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.PaymentViewRowChanging != null)) {
-                    this.PaymentViewRowChanging(this, new PaymentViewRowChangeEvent(((PaymentViewRow)(e.Row)), e.Action));
+                if ((this.WasteStockViewRowChanging != null)) {
+                    this.WasteStockViewRowChanging(this, new WasteStockViewRowChangeEvent(((WasteStockViewRow)(e.Row)), e.Action));
                 }
             }
             
@@ -534,8 +504,8 @@ namespace POS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.PaymentViewRowDeleted != null)) {
-                    this.PaymentViewRowDeleted(this, new PaymentViewRowChangeEvent(((PaymentViewRow)(e.Row)), e.Action));
+                if ((this.WasteStockViewRowDeleted != null)) {
+                    this.WasteStockViewRowDeleted(this, new WasteStockViewRowChangeEvent(((WasteStockViewRow)(e.Row)), e.Action));
                 }
             }
             
@@ -543,14 +513,14 @@ namespace POS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.PaymentViewRowDeleting != null)) {
-                    this.PaymentViewRowDeleting(this, new PaymentViewRowChangeEvent(((PaymentViewRow)(e.Row)), e.Action));
+                if ((this.WasteStockViewRowDeleting != null)) {
+                    this.WasteStockViewRowDeleting(this, new WasteStockViewRowChangeEvent(((WasteStockViewRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void RemovePaymentViewRow(PaymentViewRow row) {
+            public void RemoveWasteStockViewRow(WasteStockViewRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -559,7 +529,7 @@ namespace POS {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                PaymentReceivedDataSet ds = new PaymentReceivedDataSet();
+                WasteStockDataSet ds = new WasteStockDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -577,7 +547,7 @@ namespace POS {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "PaymentViewDataTable";
+                attribute2.FixedValue = "WasteStockViewDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -621,41 +591,41 @@ namespace POS {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class PaymentViewRow : global::System.Data.DataRow {
+        public partial class WasteStockViewRow : global::System.Data.DataRow {
             
-            private PaymentViewDataTable tablePaymentView;
+            private WasteStockViewDataTable tableWasteStockView;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal PaymentViewRow(global::System.Data.DataRowBuilder rb) : 
+            internal WasteStockViewRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tablePaymentView = ((PaymentViewDataTable)(this.Table));
+                this.tableWasteStockView = ((WasteStockViewDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int CID {
+            public int PID {
                 get {
-                    return ((int)(this[this.tablePaymentView.CIDColumn]));
+                    return ((int)(this[this.tableWasteStockView.PIDColumn]));
                 }
                 set {
-                    this[this.tablePaymentView.CIDColumn] = value;
+                    this[this.tableWasteStockView.PIDColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string cname {
+            public string pname {
                 get {
                     try {
-                        return ((string)(this[this.tablePaymentView.cnameColumn]));
+                        return ((string)(this[this.tableWasteStockView.pnameColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'cname\' in table \'PaymentView\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'pname\' in table \'WasteStockView\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablePaymentView.cnameColumn] = value;
+                    this[this.tableWasteStockView.pnameColumn] = value;
                 }
             }
             
@@ -664,134 +634,95 @@ namespace POS {
             public System.DateTime date {
                 get {
                     try {
-                        return ((global::System.DateTime)(this[this.tablePaymentView.dateColumn]));
+                        return ((global::System.DateTime)(this[this.tableWasteStockView.dateColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'date\' in table \'PaymentView\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'date\' in table \'WasteStockView\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablePaymentView.dateColumn] = value;
+                    this[this.tableWasteStockView.dateColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int amount {
+            public int qty {
                 get {
                     try {
-                        return ((int)(this[this.tablePaymentView.amountColumn]));
+                        return ((int)(this[this.tableWasteStockView.qtyColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'amount\' in table \'PaymentView\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'qty\' in table \'WasteStockView\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablePaymentView.amountColumn] = value;
+                    this[this.tableWasteStockView.qtyColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string source {
+            public string reason {
                 get {
                     try {
-                        return ((string)(this[this.tablePaymentView.sourceColumn]));
+                        return ((string)(this[this.tableWasteStockView.reasonColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'source\' in table \'PaymentView\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'reason\' in table \'WasteStockView\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablePaymentView.sourceColumn] = value;
+                    this[this.tableWasteStockView.reasonColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int UID {
-                get {
-                    return ((int)(this[this.tablePaymentView.UIDColumn]));
-                }
-                set {
-                    this[this.tablePaymentView.UIDColumn] = value;
-                }
+            public bool IspnameNull() {
+                return this.IsNull(this.tableWasteStockView.pnameColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string uname {
-                get {
-                    try {
-                        return ((string)(this[this.tablePaymentView.unameColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'uname\' in table \'PaymentView\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tablePaymentView.unameColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IscnameNull() {
-                return this.IsNull(this.tablePaymentView.cnameColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetcnameNull() {
-                this[this.tablePaymentView.cnameColumn] = global::System.Convert.DBNull;
+            public void SetpnameNull() {
+                this[this.tableWasteStockView.pnameColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsdateNull() {
-                return this.IsNull(this.tablePaymentView.dateColumn);
+                return this.IsNull(this.tableWasteStockView.dateColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetdateNull() {
-                this[this.tablePaymentView.dateColumn] = global::System.Convert.DBNull;
+                this[this.tableWasteStockView.dateColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsamountNull() {
-                return this.IsNull(this.tablePaymentView.amountColumn);
+            public bool IsqtyNull() {
+                return this.IsNull(this.tableWasteStockView.qtyColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetamountNull() {
-                this[this.tablePaymentView.amountColumn] = global::System.Convert.DBNull;
+            public void SetqtyNull() {
+                this[this.tableWasteStockView.qtyColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IssourceNull() {
-                return this.IsNull(this.tablePaymentView.sourceColumn);
+            public bool IsreasonNull() {
+                return this.IsNull(this.tableWasteStockView.reasonColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetsourceNull() {
-                this[this.tablePaymentView.sourceColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsunameNull() {
-                return this.IsNull(this.tablePaymentView.unameColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetunameNull() {
-                this[this.tablePaymentView.unameColumn] = global::System.Convert.DBNull;
+            public void SetreasonNull() {
+                this[this.tableWasteStockView.reasonColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -799,22 +730,22 @@ namespace POS {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public class PaymentViewRowChangeEvent : global::System.EventArgs {
+        public class WasteStockViewRowChangeEvent : global::System.EventArgs {
             
-            private PaymentViewRow eventRow;
+            private WasteStockViewRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public PaymentViewRowChangeEvent(PaymentViewRow row, global::System.Data.DataRowAction action) {
+            public WasteStockViewRowChangeEvent(WasteStockViewRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public PaymentViewRow Row {
+            public WasteStockViewRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -830,7 +761,7 @@ namespace POS {
         }
     }
 }
-namespace POS.PaymentReceivedDataSetTableAdapters {
+namespace POS.WasteStockDataSetTableAdapters {
     
     
     /// <summary>
@@ -842,7 +773,7 @@ namespace POS.PaymentReceivedDataSetTableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class PaymentViewTableAdapter : global::System.ComponentModel.Component {
+    public partial class WasteStockViewTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -856,7 +787,7 @@ namespace POS.PaymentReceivedDataSetTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public PaymentViewTableAdapter() {
+        public WasteStockViewTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -953,14 +884,12 @@ namespace POS.PaymentReceivedDataSetTableAdapters {
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "PaymentView";
-            tableMapping.ColumnMappings.Add("CID", "CID");
-            tableMapping.ColumnMappings.Add("cname", "cname");
+            tableMapping.DataSetTable = "WasteStockView";
+            tableMapping.ColumnMappings.Add("PID", "PID");
+            tableMapping.ColumnMappings.Add("pname", "pname");
             tableMapping.ColumnMappings.Add("date", "date");
-            tableMapping.ColumnMappings.Add("amount", "amount");
-            tableMapping.ColumnMappings.Add("source", "source");
-            tableMapping.ColumnMappings.Add("UID", "UID");
-            tableMapping.ColumnMappings.Add("uname", "uname");
+            tableMapping.ColumnMappings.Add("qty", "qty");
+            tableMapping.ColumnMappings.Add("reason", "reason");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -977,24 +906,16 @@ namespace POS.PaymentReceivedDataSetTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT        CID, cname, date, amount, source, UID, uname\r\nFROM            Payme" +
-                "ntView\r\nWHERE        (date = @date)";
+            this._commandCollection[0].CommandText = "SELECT PID, pname, date, qty, reason FROM dbo.WasteStockView";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@date", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(PaymentReceivedDataSet.PaymentViewDataTable dataTable, global::System.Nullable<global::System.DateTime> date) {
+        public virtual int Fill(WasteStockDataSet.WasteStockViewDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((date.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[0].Value = ((System.DateTime)(date.Value));
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
-            }
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
@@ -1006,15 +927,9 @@ namespace POS.PaymentReceivedDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual PaymentReceivedDataSet.PaymentViewDataTable GetData(global::System.Nullable<global::System.DateTime> date) {
+        public virtual WasteStockDataSet.WasteStockViewDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((date.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[0].Value = ((System.DateTime)(date.Value));
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
-            }
-            PaymentReceivedDataSet.PaymentViewDataTable dataTable = new PaymentReceivedDataSet.PaymentViewDataTable();
+            WasteStockDataSet.WasteStockViewDataTable dataTable = new WasteStockDataSet.WasteStockViewDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -1088,7 +1003,7 @@ namespace POS.PaymentReceivedDataSetTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateUpdatedRows(PaymentReceivedDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(WasteStockDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             return result;
         }
@@ -1098,7 +1013,7 @@ namespace POS.PaymentReceivedDataSetTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateInsertedRows(PaymentReceivedDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(WasteStockDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             return result;
         }
@@ -1108,7 +1023,7 @@ namespace POS.PaymentReceivedDataSetTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateDeletedRows(PaymentReceivedDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(WasteStockDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
             return result;
         }
@@ -1142,7 +1057,7 @@ namespace POS.PaymentReceivedDataSetTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public virtual int UpdateAll(PaymentReceivedDataSet dataSet) {
+        public virtual int UpdateAll(WasteStockDataSet dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }

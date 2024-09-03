@@ -42,7 +42,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Elephant", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(88)))), ((int)(((byte)(108)))));
-            this.label8.Location = new System.Drawing.Point(204, 28);
+            this.label8.Location = new System.Drawing.Point(264, 28);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(364, 35);
             this.label8.TabIndex = 71;
@@ -54,13 +54,13 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(4, 154);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(746, 269);
+            this.dataGridView1.Size = new System.Drawing.Size(859, 361);
             this.dataGridView1.TabIndex = 72;
             // 
             // txtCustomerSearch
             // 
             this.txtCustomerSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCustomerSearch.Location = new System.Drawing.Point(260, 107);
+            this.txtCustomerSearch.Location = new System.Drawing.Point(320, 107);
             this.txtCustomerSearch.Multiline = true;
             this.txtCustomerSearch.Name = "txtCustomerSearch";
             this.txtCustomerSearch.Size = new System.Drawing.Size(241, 27);
@@ -73,7 +73,7 @@
             this.label5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label5.Font = new System.Drawing.Font("Elephant", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(88)))), ((int)(((byte)(108)))));
-            this.label5.Location = new System.Drawing.Point(274, 77);
+            this.label5.Location = new System.Drawing.Point(334, 77);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(214, 27);
             this.label5.TabIndex = 122;
@@ -87,7 +87,7 @@
             this.btnfetch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnfetch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnfetch.ForeColor = System.Drawing.Color.Transparent;
-            this.btnfetch.Location = new System.Drawing.Point(620, 88);
+            this.btnfetch.Location = new System.Drawing.Point(787, 77);
             this.btnfetch.Name = "btnfetch";
             this.btnfetch.Size = new System.Drawing.Size(57, 57);
             this.btnfetch.TabIndex = 1;
@@ -99,7 +99,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(226)))), ((int)(((byte)(240)))));
-            this.ClientSize = new System.Drawing.Size(755, 435);
+            this.ClientSize = new System.Drawing.Size(875, 527);
             this.Controls.Add(this.btnfetch);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtCustomerSearch);

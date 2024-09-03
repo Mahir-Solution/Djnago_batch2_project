@@ -55,10 +55,32 @@
     <Compile Include="Anysaleform.Designer.cs">
       <DependentUpon>Anysaleform.cs</DependentUpon>
     </Compile>
+    <Compile Include="AnySaleThermalForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AnySaleThermalForm.Designer.cs">
+      <DependentUpon>AnySaleThermalForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BalanceDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BalanceDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="CustomerbillDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CustomerbillDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerBottleDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CustomerBottleDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerBottleForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomerBottleForm.Designer.cs">
+      <DependentUpon>CustomerBottleForm.cs</DependentUpon>
     </Compile>
     <Compile Include="DailyMonthlyAnySaleDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -70,6 +92,12 @@
     </Compile>
     <Compile Include="DailyMonthlyAnySaleform.Designer.cs">
       <DependentUpon>DailyMonthlyAnySaleform.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmCustomerLedger.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmCustomerLedger.Designer.cs">
+      <DependentUpon>frmCustomerLedger.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\frmanysale.cs">
       <SubType>Form</SubType>
@@ -100,6 +128,12 @@
     </Compile>
     <Compile Include="Forms\frmcustomerbill.Designer.cs">
       <DependentUpon>frmcustomerbill.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmcustomerbottle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmcustomerbottle.Designer.cs">
+      <DependentUpon>frmcustomerbottle.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\frmCustomerTrialbalance.cs">
       <SubType>Form</SubType>
@@ -149,6 +183,12 @@
     <Compile Include="Forms\frmSale.Designer.cs">
       <DependentUpon>frmSale.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\frmSaleReturnForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmSaleReturnForm.Designer.cs">
+      <DependentUpon>frmSaleReturnForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\frmsalesman.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -160,6 +200,18 @@
     </Compile>
     <Compile Include="Forms\frmsalesmanreport.Designer.cs">
       <DependentUpon>frmsalesmanreport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmstock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmstock.Designer.cs">
+      <DependentUpon>frmstock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmsupplier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmsupplier.Designer.cs">
+      <DependentUpon>frmsupplier.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\frmUser.cs">
       <SubType>Form</SubType>
@@ -176,13 +228,16 @@
     <Compile Include="Model\Payment.cs" />
     <Compile Include="Model\Product.cs" />
     <Compile Include="Model\salesman.cs" />
+    <Compile Include="Model\Stock.cs" />
+    <Compile Include="Model\Supplier.cs" />
     <Compile Include="Model\User.cs" />
     <Compile Include="Model\Program.cs" />
     <Compile Include="Model\Varibale.cs" />
-    <Compile Include="PaymentReceivedDataSet.Designer.cs">
+    <Compile Include="Model\WasteStock.cs" />
+    <Compile Include="PaymentDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>PaymentReceivedDataSet.xsd</DependentUpon>
+      <DependentUpon>PaymentDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="PaymentReceivedForm.cs">
       <SubType>Form</SubType>
@@ -213,14 +268,47 @@
     <Compile Include="Salesmanform.Designer.cs">
       <DependentUpon>Salesmanform.cs</DependentUpon>
     </Compile>
+    <Compile Include="StockForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StockForm.Designer.cs">
+      <DependentUpon>StockForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StocksDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StocksDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="WasteSticjForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WasteSticjForm.Designer.cs">
+      <DependentUpon>WasteSticjForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WasteStockDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WasteStockDataSet.xsd</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Anysaleform.resx">
       <DependentUpon>Anysaleform.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AnySaleReport.rdlc" />
+    <EmbeddedResource Include="AnySaleThermalForm.resx">
+      <DependentUpon>AnySaleThermalForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AnySaleThermalReport.rdlc" />
+    <EmbeddedResource Include="CustomerBottleForm.resx">
+      <DependentUpon>CustomerBottleForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerBottleReport.rdlc" />
     <EmbeddedResource Include="DailyMonthlyAnySaleform.resx">
       <DependentUpon>DailyMonthlyAnySaleform.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DailyMonthlyAnySaleReport.rdlc" />
+    <EmbeddedResource Include="Forms\frmCustomerLedger.resx">
+      <DependentUpon>frmCustomerLedger.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmanysale.resx">
       <DependentUpon>frmanysale.cs</DependentUpon>
     </EmbeddedResource>
@@ -236,6 +324,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmcustomerbill.resx">
       <DependentUpon>frmcustomerbill.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmcustomerbottle.resx">
+      <DependentUpon>frmcustomerbottle.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmCustomerTrialbalance.resx">
       <DependentUpon>frmCustomerTrialbalance.cs</DependentUpon>
@@ -261,11 +352,20 @@
     <EmbeddedResource Include="Forms\frmSale.resx">
       <DependentUpon>frmSale.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmSaleReturnForm.resx">
+      <DependentUpon>frmSaleReturnForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmsalesman.resx">
       <DependentUpon>frmsalesman.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmsalesmanreport.resx">
       <DependentUpon>frmsalesmanreport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmstock.resx">
+      <DependentUpon>frmstock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmsupplier.resx">
+      <DependentUpon>frmsupplier.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmUser.resx">
       <DependentUpon>frmUser.cs</DependentUpon>
@@ -291,6 +391,25 @@
       <DependentUpon>Salesmanform.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SalesmanReport.rdlc" />
+    <EmbeddedResource Include="StockForm.resx">
+      <DependentUpon>StockForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StocksReport.rdlc" />
+    <EmbeddedResource Include="WasteSticjForm.resx">
+      <DependentUpon>WasteSticjForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WasteStockReport.rdlc" />
+    <None Include="BalanceDataSet.xsc">
+      <DependentUpon>BalanceDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="BalanceDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BalanceDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="BalanceDataSet.xss">
+      <DependentUpon>BalanceDataSet.xsd</DependentUpon>
+    </None>
     <None Include="CustomerbillDataSet.xsc">
       <DependentUpon>CustomerbillDataSet.xsd</DependentUpon>
     </None>
@@ -301,6 +420,17 @@
     </None>
     <None Include="CustomerbillDataSet.xss">
       <DependentUpon>CustomerbillDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="CustomerBottleDataSet.xsc">
+      <DependentUpon>CustomerBottleDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="CustomerBottleDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CustomerBottleDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CustomerBottleDataSet.xss">
+      <DependentUpon>CustomerBottleDataSet.xsd</DependentUpon>
     </None>
     <None Include="DailyMonthlyAnySaleDataSet.xsc">
       <DependentUpon>DailyMonthlyAnySaleDataSet.xsd</DependentUpon>
@@ -313,16 +443,16 @@
     <None Include="DailyMonthlyAnySaleDataSet.xss">
       <DependentUpon>DailyMonthlyAnySaleDataSet.xsd</DependentUpon>
     </None>
-    <None Include="PaymentReceivedDataSet.xsc">
-      <DependentUpon>PaymentReceivedDataSet.xsd</DependentUpon>
+    <None Include="PaymentDataSet.xsc">
+      <DependentUpon>PaymentDataSet.xsd</DependentUpon>
     </None>
-    <None Include="PaymentReceivedDataSet.xsd">
+    <None Include="PaymentDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>PaymentReceivedDataSet.Designer.cs</LastGenOutput>
+      <LastGenOutput>PaymentDataSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="PaymentReceivedDataSet.xss">
-      <DependentUpon>PaymentReceivedDataSet.xsd</DependentUpon>
+    <None Include="PaymentDataSet.xss">
+      <DependentUpon>PaymentDataSet.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -354,6 +484,28 @@
     </None>
     <None Include="SalesmanDataSet.xss">
       <DependentUpon>SalesmanDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="StocksDataSet.xsc">
+      <DependentUpon>StocksDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="StocksDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>StocksDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="StocksDataSet.xss">
+      <DependentUpon>StocksDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="WasteStockDataSet.xsc">
+      <DependentUpon>WasteStockDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="WasteStockDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>WasteStockDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="WasteStockDataSet.xss">
+      <DependentUpon>WasteStockDataSet.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

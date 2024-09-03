@@ -21,7 +21,7 @@ namespace POS.Model
         public int total { get; set; }
         public DateTime date { get; set; }
 
-        public decimal Total_Order_Customer { get; set; }
+        public int Total_Order_Customer { get; set; }
         public OrderDetail()
         {
             ODID = -1;
@@ -89,19 +89,20 @@ namespace POS.Model
             }
             return " ";
         }
-        public decimal Customer_Total_Sale()
+        public int Customer_Total_Sale(int cid)
         {
 
             try
             {
-                string query = "select c.cname SUM(od.total) as TOTAL from tblcustomer c inner join tblorder o on c.CID = o.CID inner join tbleorderdetail od on od.OID = o.OID GROUP BY  c.cname";
+                //string query = "select c.cname, SUM(od.total) as TOTAL from tblcustomer c inner join tblorder o on c.CID = o.CID inner join tbleorderdetail od on od.OID = o.OID GROUP BY  c.cname";
+                string query = "select c.cid, SUM(od.total) as TOTAL from tblcustomer c inner join tblorder o on c.CID = o.CID inner join tbleorderdetail od on od.OID = o.OID where c.cid = @cid group by c.cid";
                 SqlCommand cmd = new SqlCommand(query);
-                
+                cmd.Parameters.AddWithValue("@cid", cid);
                 DatabaseHandler db = new DatabaseHandler();
                 DataTable dt = db.GetData(cmd);
                 if (dt.Rows.Count > 0 && dt.Rows[0]["TOTAL"] != DBNull.Value)
                 {
-                    decimal? Total_Order_Customer = dt.Rows[0].Field<decimal?>("TOTAL");
+                    int? Total_Order_Customer = dt.Rows[0].Field<int?>("TOTAL");
                     return Total_Order_Customer ?? 0;
                 }
             }
@@ -111,6 +112,70 @@ namespace POS.Model
             }
             return 0;
         }
+        public int Total_Sale_Qty(int pid)
+        {
+
+            try
+            {
+
+                string query = "select SUM(qty) AS T_Sale_Stock from tbleorderdetail where pid = @pid";
+                SqlCommand cmd = new SqlCommand(query);
+                cmd.Parameters.AddWithValue("@pid", pid);
+                DatabaseHandler db = new DatabaseHandler();
+                DataTable dt = db.GetData(cmd);
+                if (dt.Rows.Count > 0)
+                {
+                    int? T_Sale_Stock = dt.Rows[0].Field<int?>("T_Sale_Stock");
+                    return T_Sale_Stock ?? 0;
+                    ;
+                }
+
+            }
+            catch (Exception obj)
+            {
+                MessageBox.Show(obj.Message);
+            }
+            return 0;
+        }
+        public DataTable fetch_order_detail(int oid)
+        {
+            try
+            {
+                string query = "select od.odid AS ID, p.pname AS Product,od.qty AS Quantity,od.total AS Total from tblproduct p inner join tbleorderdetail od on p.PID = od.PID where od.OID = @oid";
+                SqlCommand cmd = new SqlCommand(query);
+                cmd.Parameters.AddWithValue("@oid", oid);
+                DatabaseHandler db = new DatabaseHandler();
+                DataTable dt = db.GetData(cmd);
+                return dt;
+            }
+            catch (Exception obj)
+            {
+                MessageBox.Show(obj.Message);
+            }
+            return null;
+        }
+        public int Order_Total(int oid)
+        {
+            try
+            {
+                string query = "select SUM(total) as TOTAL from tbleorderdetail where OID = @oid";
+                SqlCommand cmd = new SqlCommand(query);
+                cmd.Parameters.AddWithValue("@oid", oid);
+                DatabaseHandler db = new DatabaseHandler();
+                DataTable dt = db.GetData(cmd);
+                if (dt.Rows.Count > 0)
+                {
+                    int? order_total = dt.Rows[0].Field<int?>("TOTAL");
+                    return order_total ?? 0;
+                }
+            }
+            catch (Exception obj)
+            {
+                MessageBox.Show(obj.Message);
+            }
+            return 0;
+        }
+
 
     }
 }

@@ -13,7 +13,7 @@ namespace POS.Model
     {
         public int BID{ get; set; }
         public int rbottle { get; set; }
-        public bool onshop { get; set; }
+        
         public int deliver { get; set; }
         public Customer customer { get; set; }
         public salesman slman { get; set; }
@@ -22,28 +22,59 @@ namespace POS.Model
         public Bottle()
         {
             rbottle = -1;
-            onshop = false;
+            
             deliver = -1;
             slman = null;
             
         }
-        public Bottle(int rb, bool tf, Customer cus, salesman sm, DateTime dt)
+        public Bottle(int rb,  Customer cus, salesman sm, DateTime dt)
         {
             rbottle = rb;
-            onshop = tf;
+            
             customer = cus;
             slman = sm;
             date = dt;
 
         }
-        public Bottle(int rb, bool tf,int dl,  Customer cus, salesman sm, DateTime dt)
+        public Bottle(int rb, int dl,  Customer cus, salesman sm, DateTime dt)
         {
             rbottle = rb;
-            onshop = tf;
+           
             deliver = dl;
             customer = cus;
             slman = sm;
             date = dt;
+
+        }
+        public Bottle(Customer cus, salesman sm, DateTime dts)
+        {
+            try
+            {
+                string query = "select * from tblbottle where cid = @cid AND  sid = @sid AND date = @date";
+                SqlCommand cmd = new SqlCommand(query);
+                cmd.Parameters.AddWithValue("@cid", cus.CID);
+                cmd.Parameters.AddWithValue("@sid", sm.SID);
+                cmd.Parameters.AddWithValue("@date",dts);
+                DatabaseHandler db = new DatabaseHandler();
+                DataTable dt = db.GetData(cmd);
+
+                if (dt.Rows.Count > 0)
+                {
+                    BID = dt.Rows[0].Field<int>("BID");
+                    rbottle = dt.Rows[0].Field<int>("rbottle");
+                    
+                }
+                else
+                {
+                    rbottle = -1;
+                   
+
+                }
+            }
+            catch (Exception obj)
+            {
+                MessageBox.Show(obj.Message);
+            }
 
         }
         public string AddNew()
@@ -52,10 +83,10 @@ namespace POS.Model
             try
             {
 
-                string query = " Insert into tblbottle(rbottle,onshop,deliver,CID,SID,date)values(@rb,@onshop,@dl,@cid,@sid,@date)";
+                string query = " Insert into tblbottle(rbottle,deliver,CID,SID,date)values(@rb,@dl,@cid,@sid,@date)";
                 SqlCommand cmd = new SqlCommand(query);
                 cmd.Parameters.AddWithValue("@rb", this.rbottle);
-                cmd.Parameters.AddWithValue("@onshop", this.onshop);
+                
                 cmd.Parameters.AddWithValue("@dl", this.deliver);
                 cmd.Parameters.AddWithValue("@cid", this.customer.CID);
                 cmd.Parameters.AddWithValue("@sid", this.slman.SID);
@@ -82,7 +113,7 @@ namespace POS.Model
         {
             try
             {
-                string query = "select * from tblebottle where BID = @bid";
+                string query = "select * from tblbottle where BID = @bid";
                 SqlCommand cmd = new SqlCommand(query);
                 cmd.Parameters.AddWithValue("@bid", id);
                 DatabaseHandler db = new DatabaseHandler();
@@ -92,8 +123,7 @@ namespace POS.Model
                 {
                     BID = id;
                     rbottle = dt.Rows[0].Field<int>("rbottle");
-                    onshop = dt.Rows[0].Field<bool>("onshop");
-                    // deliver = dt.Rows[0].Field<int>("deliver");
+                    
                     customer = new Customer(dt.Rows[0].Field<int>("CID"));
                     slman = new salesman(dt.Rows[0].Field<int>("SID"));
                     date = dt.Rows[0].Field<DateTime>("date");
@@ -101,7 +131,7 @@ namespace POS.Model
                 else
                 {
                     rbottle = -1;
-                    onshop = false;
+                   
                     deliver = -1;
                     slman = null;
                     customer = null;
@@ -144,13 +174,13 @@ namespace POS.Model
 
             try
             {
-                string query = "update tblbottle set rbottle = @rb, onshop = @tf, deliver = @dl , SID = @sid, date=@d  where BID = @bid";
+                string query = "update tblbottle set rbottle = @rb,date = @date  where BID = @bid";
                 SqlCommand cmd = new SqlCommand(query);
                 cmd.Parameters.AddWithValue("@rb", this.rbottle);
-                cmd.Parameters.AddWithValue("@tf", this.onshop);
-                cmd.Parameters.AddWithValue("@dl", this.deliver);
-                cmd.Parameters.AddWithValue("@sid", this.slman.SID);
-                cmd.Parameters.AddWithValue("@d", this.date);
+                cmd.Parameters.AddWithValue("@bid", this.BID);
+                //cmd.Parameters.AddWithValue("@dl", this.deliver);
+                //cmd.Parameters.AddWithValue("@sid", this.slman.SID);
+                cmd.Parameters.AddWithValue("@date", this.date);
                 DatabaseHandler db = new DatabaseHandler();
                 if (db.UpdateData(cmd) > 0)
                 {

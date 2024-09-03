@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmcustomerbill));
             this.customerpanel = new System.Windows.Forms.Panel();
+            this.txtsupsearch = new System.Windows.Forms.TextBox();
             this.btnexit = new System.Windows.Forms.Button();
             this.cbsupplier1 = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -42,7 +43,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.txtsupsearch = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.customerpanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -50,6 +53,9 @@
             // 
             // customerpanel
             // 
+            this.customerpanel.Controls.Add(this.label4);
+            this.customerpanel.Controls.Add(this.button1);
+            this.customerpanel.Controls.Add(this.label3);
             this.customerpanel.Controls.Add(this.txtsupsearch);
             this.customerpanel.Controls.Add(this.btnexit);
             this.customerpanel.Controls.Add(this.cbsupplier1);
@@ -68,6 +74,15 @@
             this.customerpanel.Name = "customerpanel";
             this.customerpanel.Size = new System.Drawing.Size(707, 414);
             this.customerpanel.TabIndex = 0;
+            // 
+            // txtsupsearch
+            // 
+            this.txtsupsearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(226)))), ((int)(((byte)(240)))));
+            this.txtsupsearch.Location = new System.Drawing.Point(270, 73);
+            this.txtsupsearch.Name = "txtsupsearch";
+            this.txtsupsearch.Size = new System.Drawing.Size(174, 20);
+            this.txtsupsearch.TabIndex = 183;
+            this.txtsupsearch.TextChanged += new System.EventHandler(this.txtsupsearch_TextChanged);
             // 
             // btnexit
             // 
@@ -123,7 +138,7 @@
             this.btnfetch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnfetch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnfetch.ForeColor = System.Drawing.Color.Transparent;
-            this.btnfetch.Location = new System.Drawing.Point(308, 324);
+            this.btnfetch.Location = new System.Drawing.Point(218, 321);
             this.btnfetch.Name = "btnfetch";
             this.btnfetch.Size = new System.Drawing.Size(68, 63);
             this.btnfetch.TabIndex = 3;
@@ -203,14 +218,44 @@
             this.dateTimePicker1.Size = new System.Drawing.Size(333, 29);
             this.dateTimePicker1.TabIndex = 1;
             // 
-            // txtsupsearch
+            // label3
             // 
-            this.txtsupsearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(226)))), ((int)(((byte)(240)))));
-            this.txtsupsearch.Location = new System.Drawing.Point(270, 73);
-            this.txtsupsearch.Name = "txtsupsearch";
-            this.txtsupsearch.Size = new System.Drawing.Size(174, 20);
-            this.txtsupsearch.TabIndex = 183;
-            this.txtsupsearch.TextChanged += new System.EventHandler(this.txtsupsearch_TextChanged);
+            this.label3.AutoSize = true;
+            this.label3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label3.Font = new System.Drawing.Font("Bahnschrift Condensed", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(88)))), ((int)(((byte)(108)))));
+            this.label3.Location = new System.Drawing.Point(214, 387);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(79, 19);
+            this.label3.TabIndex = 184;
+            this.label3.Text = "Large Printer";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label4.Font = new System.Drawing.Font("Bahnschrift Condensed", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(88)))), ((int)(((byte)(108)))));
+            this.label4.Location = new System.Drawing.Point(440, 386);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(81, 19);
+            this.label4.TabIndex = 186;
+            this.label4.Text = "Samll Printer";
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Transparent;
+            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.Transparent;
+            this.button1.Location = new System.Drawing.Point(444, 321);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(68, 63);
+            this.button1.TabIndex = 185;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // frmcustomerbill
             // 
@@ -248,5 +293,8 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Button btnexit;
         private System.Windows.Forms.TextBox txtsupsearch;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label3;
     }
 }

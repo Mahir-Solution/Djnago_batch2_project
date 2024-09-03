@@ -19,15 +19,14 @@ namespace POS.Forms
 
         private void btnfetch_Click(object sender, EventArgs e)
         {
-            DateTime d = dtpicker1.Value.Date;
-           
-            //MessageBox.Show(sd.ToString() + ed.ToString());
-
-            Varibale.date = d;
-           
-            //MessageBox.Show(Varibale.sdate.ToString() + Varibale.edate.ToString());
-            PaymentReceivedForm frm = new PaymentReceivedForm();
-            frm.Show();
+            DateTime sd = dtpicker1.Value.Date;
+            DateTime ed = dtpicker2.Value.Date;
+            int cid = Convert.ToInt32(cbcutomer.SelectedValue);
+            Varibale.sdate = sd;
+            Varibale.edate = ed;
+            Varibale.cid = cid;
+            PaymentReceivedForm obj = new PaymentReceivedForm();
+            obj.Show();
 
         }
 
@@ -38,12 +37,35 @@ namespace POS.Forms
 
         private void frmpaymentReceived_Load(object sender, EventArgs e)
         {
-            
+            Customer.Customerlist(cbcutomer);
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
           
         }
+
+        private void txtsupsearch_TextChanged(object sender, EventArgs e)
+        {
+            CustomerSearch();
+        }
+        public void CustomerSearch()
+        {
+            try
+            {
+                DataTable dataTable = Customer.CustomerSearch(this.txtsupsearch.Text.Trim());
+                DataRow dataRow = dataTable.NewRow();
+
+                dataTable.Rows.InsertAt(dataRow, 0);
+                this.cbcutomer.ValueMember = "CID";
+                this.cbcutomer.DisplayMember = "cname";
+                this.cbcutomer.DataSource = dataTable;
+            }
+            catch (Exception obj)
+            {
+                MessageBox.Show(obj.Message);
+            }
+        }
+
     }
 }

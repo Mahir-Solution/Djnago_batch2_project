@@ -127,37 +127,36 @@ namespace POS.Model
         //    return null;
         //}
 
-        //public string UpdateData()
-        //{
-        //    if (this.itemname == null || this.itemname == string.Empty)
-        //        return "Error = item name is required";
+        public string UpdateData()
+        {
+            
 
-        //    try
-        //    {
-        //        string query = "update itemtable set itemname = @itemname, type = @type, unit = @unit , catid = @catid  where itemid = @id";
-        //        SqlCommand cmd = new SqlCommand(query);
-        //        cmd.Parameters.AddWithValue("@itemname", this.itemname);
-        //        cmd.Parameters.AddWithValue("@type", this.type);
-        //        cmd.Parameters.AddWithValue("@unit", this.unit);
-        //        cmd.Parameters.AddWithValue("@catid", this.category.CatId);
-        //        cmd.Parameters.AddWithValue("@id", this.Itemid);
-        //        DatabaseHandler db = new DatabaseHandler();
-        //        if (db.UpdateData(cmd) > 0)
-        //        {
-        //            return "successfully update data";
+            try
+            {
+                string query = "update tblproduct set pname = @name,unit = @unit , price = @price  where pid = @id";
+                SqlCommand cmd = new SqlCommand(query);
+                cmd.Parameters.AddWithValue("@id", this.PID);
+                cmd.Parameters.AddWithValue("@name", this.pname);
+                cmd.Parameters.AddWithValue("@price", this.price);
+                cmd.Parameters.AddWithValue("@unit", this.unit);
+                
+                DatabaseHandler db = new DatabaseHandler();
+                if (db.UpdateData(cmd) > 0)
+                {
+                    return "successfully update data";
 
-        //        }
-        //        else
-        //        {
-        //            return " not update try again";
-        //        }
-        //    }
-        //    catch (Exception obj)
-        //    {
-        //        MessageBox.Show(obj.Message);
-        //    }
-        //    return " ";
-        //}
+                }
+                else
+                {
+                    return " not update try again";
+                }
+            }
+            catch (Exception obj)
+            {
+                MessageBox.Show(obj.Message);
+            }
+            return " ";
+        }
 
         public static void ProductList(ComboBox cbo)
         {

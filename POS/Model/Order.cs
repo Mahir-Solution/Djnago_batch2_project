@@ -31,6 +31,36 @@ namespace POS.Model
             onumber = on;
             date = dt;
         }
+        public Order(string on, DateTime date)
+        {
+            try
+            {
+                string query = "select * from tblorder where onumber = @on AND date = @date";
+                SqlCommand cmd = new SqlCommand(query);
+                cmd.Parameters.AddWithValue("@on", on);
+                cmd.Parameters.AddWithValue("@date", date);
+                DatabaseHandler db = new DatabaseHandler();
+                DataTable dt = db.GetData(cmd);
+                if (dt.Rows.Count > 0)
+                {
+                    OID = dt.Rows[0].Field<int>("OID");
+                    customer = new Customer(dt.Rows[0].Field<int>("CID"));
+
+                }
+            }
+            catch (Exception obj)
+            {
+                MessageBox.Show(obj.Message);
+            }
+        }
+        //public Order(Customer cus, User u, string on, DateTime dt)
+        //{
+
+        //    customer = cus;
+        //    user = u;
+        //    onumber = on;
+        //    date = dt;
+        //}
         public Order(int id)
         {
             try

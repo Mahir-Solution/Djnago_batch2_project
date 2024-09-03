@@ -22,6 +22,8 @@ namespace POS.Forms
         {
             Customer.Customerlist(cbcustomer);
             salesman.Salesmanlist(cbsalesman);
+            Customer.Customerlist(cbupdatecustomer);
+            salesman.Salesmanlist(cbupdatesalesman);
         }
 
         private void btnsave_Click(object sender, EventArgs e)
@@ -30,15 +32,15 @@ namespace POS.Forms
             int cid = Convert.ToInt32(cbcustomer.SelectedValue);
             int sid = Convert.ToInt32(cbsalesman.SelectedValue);
             int r = Convert.ToInt32(txtreturn.Text);
-            bool ischecked = checkBox1.Checked;
             
-            Bottle obj = new Bottle(r, ischecked, new Customer(cid), new salesman(sid),date);
+            
+            Bottle obj = new Bottle(r, new Customer(cid), new salesman(sid),date);
             string msg = obj.AddNew();
             MessageBox.Show(msg);
             cbcustomer.SelectedIndex = -1;
             cbsalesman.SelectedIndex = -1;
             txtreturn.Clear();
-            checkBox1.Checked = false;
+            
             dateTimePicker1.Value = DateTime.Now;
 
 
@@ -91,6 +93,69 @@ namespace POS.Forms
             {
                 MessageBox.Show(obj.Message);
             }
+        }
+
+        private void cbcustomer_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void txtcustomersearch_TextChanged(object sender, EventArgs e)
+        {
+            CustomerupdateSearch();
+        }
+        public void CustomerupdateSearch()
+        {
+            try
+            {
+                DataTable dataTable = Customer.CustomerSearch(this.txtcustomersearch.Text.Trim());
+                DataRow dataRow = dataTable.NewRow();
+
+                dataTable.Rows.InsertAt(dataRow, 0);
+                this.cbupdatecustomer.ValueMember = "CID";
+                this.cbupdatecustomer.DisplayMember = "cname";
+                this.cbupdatecustomer.DataSource = dataTable;
+            }
+            catch (Exception obj)
+            {
+                MessageBox.Show(obj.Message);
+            }
+        }
+
+        private void btnfetch_Click(object sender, EventArgs e)
+        {
+            DateTime dt = dateTimePicker1.Value.Date;
+            int cid = Convert.ToInt32(cbupdatecustomer.SelectedValue);
+            int sid = Convert.ToInt32(cbupdatesalesman.SelectedValue);
+            Bottle obj = new Bottle(new Customer(cid), new salesman(sid), dt);
+            txtupdatereturn.Text = obj.rbottle.ToString();
+            txtbid.Text = obj.BID.ToString();
+            
+        }
+
+        private void btnupdate_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int id = Convert.ToInt32(txtbid.Text);
+                Bottle obj = new Bottle(id);
+                obj.rbottle = Convert.ToInt32(txtupdatereturn.Text);
+                string msg = obj.UpdateData();
+                MessageBox.Show(msg);
+                txtbid.Clear();
+                txtupdatereturn.Clear();
+                
+            }
+            catch (Exception obj)
+            {
+                MessageBox.Show(obj.Message);
+            }
+
         }
     }
 }

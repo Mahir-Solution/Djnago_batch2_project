@@ -20,7 +20,7 @@ namespace POS
         private void Salesmanform_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'SalesmanDataSet.SalesmanView' table. You can move, or remove it, as needed.
-            this.SalesmanViewTableAdapter.Fill(this.SalesmanDataSet.SalesmanView,Varibale.sid);
+            this.SalesmanViewTableAdapter.Fill(this.SalesmanDataSet.SalesmanView,Varibale.sid,Varibale.sdate,Varibale.edate);
 
             this.reportViewer1.RefreshReport();
         }

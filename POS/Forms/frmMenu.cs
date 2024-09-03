@@ -71,14 +71,14 @@ namespace POS.Forms
 
         private void button20_Click(object sender, EventArgs e)
         {
-            //frmProduct obj = new frmProduct();
-            //obj.TopLevel = false;
-            //panelContainer.Controls.Clear();
-            //panelContainer.Controls.Add(obj);
-            //panelContainer.BringToFront();
-            //obj.StartPosition = FormStartPosition.CenterParent;
-            //obj.Dock = DockStyle.Fill;
-            //obj.Show();
+            frmProduct obj = new frmProduct();
+            obj.TopLevel = false;
+            panelContainer.Controls.Clear();
+            panelContainer.Controls.Add(obj);
+            panelContainer.BringToFront();
+            obj.StartPosition = FormStartPosition.CenterParent;
+            obj.Dock = DockStyle.Fill;
+            obj.Show();
         }
 
         private void button6_Click(object sender, EventArgs e)
@@ -192,14 +192,14 @@ namespace POS.Forms
 
         private void button10_Click(object sender, EventArgs e)
         {
-            //frmBackup obj = new frmBackup();
-            //obj.TopLevel = false;
-            //panelContainer.Controls.Clear();
-            //panelContainer.Controls.Add(obj);
-            //panelContainer.BringToFront();
-            //obj.StartPosition = FormStartPosition.CenterParent;
-            //obj.Dock = DockStyle.Fill;
-            //obj.Show();
+            frmBackup obj = new frmBackup();
+            obj.TopLevel = false;
+            panelContainer.Controls.Clear();
+            panelContainer.Controls.Add(obj);
+            panelContainer.BringToFront();
+            obj.StartPosition = FormStartPosition.CenterParent;
+            obj.Dock = DockStyle.Fill;
+            obj.Show();
         }
 
         private void button28_Click(object sender, EventArgs e)
@@ -217,6 +217,42 @@ namespace POS.Forms
         private void button16_Click(object sender, EventArgs e)
         {
             frmReporting obj = new frmReporting();
+            obj.TopLevel = false;
+            panelContainer.Controls.Clear();
+            panelContainer.Controls.Add(obj);
+            panelContainer.BringToFront();
+            obj.StartPosition = FormStartPosition.CenterParent;
+            obj.Dock = DockStyle.Fill;
+            obj.Show();
+        }
+
+        private void button22_Click(object sender, EventArgs e)
+        {
+            frmsupplier obj = new frmsupplier();
+            obj.TopLevel = false;
+            panelContainer.Controls.Clear();
+            panelContainer.Controls.Add(obj);
+            panelContainer.BringToFront();
+            obj.StartPosition = FormStartPosition.CenterParent;
+            obj.Dock = DockStyle.Fill;
+            obj.Show();
+        }
+
+        private void button24_Click(object sender, EventArgs e)
+        {
+            frmSaleReturnForm obj = new frmSaleReturnForm();
+            obj.TopLevel = false;
+            panelContainer.Controls.Clear();
+            panelContainer.Controls.Add(obj);
+            panelContainer.BringToFront();
+            obj.StartPosition = FormStartPosition.CenterParent;
+            obj.Dock = DockStyle.Fill;
+            obj.Show();
+        }
+
+        private void button26_Click_1(object sender, EventArgs e)
+        {
+            frmstock obj = new frmstock();
             obj.TopLevel = false;
             panelContainer.Controls.Clear();
             panelContainer.Controls.Add(obj);

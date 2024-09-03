@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using POS.Forms;
 namespace POS.Forms
 {
     public partial class frmReporting : Form
@@ -85,6 +85,54 @@ namespace POS.Forms
         private void button8_Click(object sender, EventArgs e)
         {
             frmCustomerTrialbalance obj = new frmCustomerTrialbalance();
+            obj.TopLevel = false;
+            reportpanel.Controls.Clear();
+            reportpanel.Controls.Add(obj);
+            reportpanel.BringToFront();
+            obj.StartPosition = FormStartPosition.CenterParent;
+            obj.Dock = DockStyle.Fill;
+            obj.Show();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            frmcustomerbottle obj = new frmcustomerbottle();
+            obj.TopLevel = false;
+            reportpanel.Controls.Clear();
+            reportpanel.Controls.Add(obj);
+            reportpanel.BringToFront();
+            obj.StartPosition = FormStartPosition.CenterParent;
+            obj.Dock = DockStyle.Fill;
+            obj.Show();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            StockForm obj = new StockForm();
+            obj.TopLevel = false;
+            reportpanel.Controls.Clear();
+            reportpanel.Controls.Add(obj);
+            reportpanel.BringToFront();
+            obj.StartPosition = FormStartPosition.CenterParent;
+            obj.Dock = DockStyle.Fill;
+            obj.Show();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            frmCustomerLedger obj = new frmCustomerLedger();
+            obj.TopLevel = false;
+            reportpanel.Controls.Clear();
+            reportpanel.Controls.Add(obj);
+            reportpanel.BringToFront();
+            obj.StartPosition = FormStartPosition.CenterParent;
+            obj.Dock = DockStyle.Fill;
+            obj.Show();
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            WasteSticjForm obj = new WasteSticjForm();
             obj.TopLevel = false;
             reportpanel.Controls.Clear();
             reportpanel.Controls.Add(obj);

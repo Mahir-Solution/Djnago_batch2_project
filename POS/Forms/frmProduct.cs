@@ -53,6 +53,7 @@ namespace POS.Forms
                 txtitem.Clear();
                 txtunit.Clear();
                 txtprice.Clear();
+                Product.ProductList(cbitem);
             }
             catch (Exception obj)
             {
@@ -88,6 +89,33 @@ namespace POS.Forms
             {
                 e.Handled = true;
             }
+        }
+
+        private void frmProduct_Load(object sender, EventArgs e)
+        {
+            Product.ProductList(cbitem);
+        }
+
+        private void btnfetch_Click(object sender, EventArgs e)
+        {
+            int pid = Convert.ToInt32(cbitem.SelectedValue);
+            Product obj = new Product(pid);
+            txtupdateunit.Text = obj.unit;
+            txtupdateprice.Text = obj.price.ToString();
+            txtpid.Text = obj.PID.ToString();
+            
+        }
+
+        private void btnupdate_Click(object sender, EventArgs e)
+        {
+            int pid = Convert.ToInt32(txtpid.Text);
+            Product obj = new Product(pid);
+            string msg = obj.UpdateData();
+            MessageBox.Show(msg);
+            txtupdateprice.Clear();
+            txtupdateunit.Clear();
+            txtpid.Clear();
+            Product.ProductList(cbitem);
         }
     }
 }
