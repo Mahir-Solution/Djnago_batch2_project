@@ -103,6 +103,7 @@ namespace POS.Forms
             txtupdateunit.Text = obj.unit;
             txtupdateprice.Text = obj.price.ToString();
             txtpid.Text = obj.PID.ToString();
+            txtretypeitem.Text = obj.pname;
             
         }
 
@@ -110,12 +111,61 @@ namespace POS.Forms
         {
             int pid = Convert.ToInt32(txtpid.Text);
             Product obj = new Product(pid);
+            obj.pname = txtretypeitem.Text;
+            obj.unit = txtupdateunit.Text;
+            obj.price = Convert.ToInt32(txtupdateprice.Text);
             string msg = obj.UpdateData();
             MessageBox.Show(msg);
             txtupdateprice.Clear();
             txtupdateunit.Clear();
             txtpid.Clear();
+            txtretypeitem.Clear();
             Product.ProductList(cbitem);
+        }
+
+        private void txtretypeitem_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+            if (char.IsLetterOrDigit(ch) | ch == 8 | ch == 32)
+            {
+                e.Handled = false;
+
+            }
+
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtupdateunit_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+            if (char.IsLetter(ch) | ch == 8 | ch == 32)
+            {
+                e.Handled = false;
+
+            }
+
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtupdateprice_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+            if (char.IsDigit(ch) | ch == 8 | ch == 32)
+            {
+                e.Handled = false;
+
+            }
+
+            else
+            {
+                e.Handled = true;
+            }
         }
     }
 }

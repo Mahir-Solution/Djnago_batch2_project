@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSaleReturnForm));
             System.Windows.Forms.Label label8;
-            this.btnremove = new System.Windows.Forms.Button();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSaleReturnForm));
+            this.btnupdate = new System.Windows.Forms.Button();
             this.txtorderdetailid = new System.Windows.Forms.TextBox();
             this.txtreturncustomer = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -43,26 +43,39 @@
             this.label2 = new System.Windows.Forms.Label();
             this.button7 = new System.Windows.Forms.Button();
             this.txtreturnordernumber = new System.Windows.Forms.TextBox();
+            this.txtcid = new System.Windows.Forms.TextBox();
+            this.Removebtn = new System.Windows.Forms.Button();
             label8 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // btnremove
+            // label8
             // 
-            this.btnremove.BackColor = System.Drawing.Color.Transparent;
-            this.btnremove.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnremove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnremove.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnremove.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(88)))), ((int)(((byte)(108)))));
-            this.btnremove.Location = new System.Drawing.Point(336, 474);
-            this.btnremove.Name = "btnremove";
-            this.btnremove.Size = new System.Drawing.Size(186, 40);
-            this.btnremove.TabIndex = 220;
-            this.btnremove.Text = "Remove Product";
-            this.btnremove.UseVisualStyleBackColor = false;
-            this.btnremove.Visible = false;
-            this.btnremove.Click += new System.EventHandler(this.btnremove_Click);
+            label8.AutoSize = true;
+            label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(88)))), ((int)(((byte)(108)))));
+            label8.Location = new System.Drawing.Point(245, 26);
+            label8.Name = "label8";
+            label8.Size = new System.Drawing.Size(270, 31);
+            label8.TabIndex = 207;
+            label8.Text = "Sale Return Record";
+            // 
+            // btnupdate
+            // 
+            this.btnupdate.BackColor = System.Drawing.Color.Transparent;
+            this.btnupdate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnupdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnupdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnupdate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(88)))), ((int)(((byte)(108)))));
+            this.btnupdate.Location = new System.Drawing.Point(534, 474);
+            this.btnupdate.Name = "btnupdate";
+            this.btnupdate.Size = new System.Drawing.Size(149, 40);
+            this.btnupdate.TabIndex = 220;
+            this.btnupdate.Text = "Update ";
+            this.btnupdate.UseVisualStyleBackColor = false;
+            this.btnupdate.Visible = false;
+            this.btnupdate.Click += new System.EventHandler(this.btnupdate_Click);
             // 
             // txtorderdetailid
             // 
@@ -193,16 +206,28 @@
             this.txtreturnordernumber.TabIndex = 209;
             this.txtreturnordernumber.UseSystemPasswordChar = true;
             // 
-            // label8
+            // txtcid
             // 
-            label8.AutoSize = true;
-            label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(88)))), ((int)(((byte)(108)))));
-            label8.Location = new System.Drawing.Point(245, 26);
-            label8.Name = "label8";
-            label8.Size = new System.Drawing.Size(270, 31);
-            label8.TabIndex = 207;
-            label8.Text = "Sale Return Record";
+            this.txtcid.Location = new System.Drawing.Point(28, 12);
+            this.txtcid.Name = "txtcid";
+            this.txtcid.Size = new System.Drawing.Size(100, 20);
+            this.txtcid.TabIndex = 221;
+            this.txtcid.Visible = false;
+            // 
+            // Removebtn
+            // 
+            this.Removebtn.BackColor = System.Drawing.Color.Transparent;
+            this.Removebtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.Removebtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Removebtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Removebtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(88)))), ((int)(((byte)(108)))));
+            this.Removebtn.Location = new System.Drawing.Point(174, 477);
+            this.Removebtn.Name = "Removebtn";
+            this.Removebtn.Size = new System.Drawing.Size(137, 34);
+            this.Removebtn.TabIndex = 222;
+            this.Removebtn.Text = "Remove";
+            this.Removebtn.UseVisualStyleBackColor = false;
+            this.Removebtn.Click += new System.EventHandler(this.Removebtn_Click);
             // 
             // frmSaleReturnForm
             // 
@@ -210,7 +235,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(226)))), ((int)(((byte)(240)))));
             this.ClientSize = new System.Drawing.Size(829, 540);
-            this.Controls.Add(this.btnremove);
+            this.Controls.Add(this.Removebtn);
+            this.Controls.Add(this.txtcid);
+            this.Controls.Add(this.btnupdate);
             this.Controls.Add(this.txtorderdetailid);
             this.Controls.Add(this.txtreturncustomer);
             this.Controls.Add(this.dataGridView1);
@@ -237,7 +264,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btnremove;
+        private System.Windows.Forms.Button btnupdate;
         private System.Windows.Forms.TextBox txtorderdetailid;
         private System.Windows.Forms.TextBox txtreturncustomer;
         private System.Windows.Forms.DataGridView dataGridView1;
@@ -250,5 +277,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.TextBox txtreturnordernumber;
+        private System.Windows.Forms.TextBox txtcid;
+        private System.Windows.Forms.Button Removebtn;
     }
 }

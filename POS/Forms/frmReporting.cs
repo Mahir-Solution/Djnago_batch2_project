@@ -120,7 +120,19 @@ namespace POS.Forms
 
         private void button6_Click(object sender, EventArgs e)
         {
-            frmCustomerLedger obj = new frmCustomerLedger();
+            //frmCustomerLedger obj = new frmCustomerLedger();
+            //obj.TopLevel = false;
+            //reportpanel.Controls.Clear();
+            //reportpanel.Controls.Add(obj);
+            //reportpanel.BringToFront();
+            //obj.StartPosition = FormStartPosition.CenterParent;
+            //obj.Dock = DockStyle.Fill;
+            //obj.Show();
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            WasteSticjForm obj = new WasteSticjForm();
             obj.TopLevel = false;
             reportpanel.Controls.Clear();
             reportpanel.Controls.Add(obj);
@@ -130,9 +142,9 @@ namespace POS.Forms
             obj.Show();
         }
 
-        private void button9_Click(object sender, EventArgs e)
+        private void button6_Click_1(object sender, EventArgs e)
         {
-            WasteSticjForm obj = new WasteSticjForm();
+            frmCustomerLedger obj = new frmCustomerLedger();
             obj.TopLevel = false;
             reportpanel.Controls.Clear();
             reportpanel.Controls.Add(obj);

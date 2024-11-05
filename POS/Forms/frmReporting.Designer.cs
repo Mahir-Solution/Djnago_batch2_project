@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.reportpanel = new System.Windows.Forms.Panel();
-            this.button6 = new System.Windows.Forms.Button();
+            this.button9 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -38,14 +38,14 @@
             this.button7 = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
             this.reportpanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // reportpanel
             // 
-            this.reportpanel.Controls.Add(this.button9);
             this.reportpanel.Controls.Add(this.button6);
+            this.reportpanel.Controls.Add(this.button9);
             this.reportpanel.Controls.Add(this.button5);
             this.reportpanel.Controls.Add(this.button4);
             this.reportpanel.Controls.Add(this.button1);
@@ -60,18 +60,18 @@
             this.reportpanel.Size = new System.Drawing.Size(821, 537);
             this.reportpanel.TabIndex = 0;
             // 
-            // button6
+            // button9
             // 
-            this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(226)))), ((int)(((byte)(240)))));
-            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(88)))), ((int)(((byte)(108)))));
-            this.button6.Location = new System.Drawing.Point(444, 407);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(251, 42);
-            this.button6.TabIndex = 95;
-            this.button6.Text = "Customer Ledger";
-            this.button6.UseVisualStyleBackColor = false;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
+            this.button9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(226)))), ((int)(((byte)(240)))));
+            this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(88)))), ((int)(((byte)(108)))));
+            this.button9.Location = new System.Drawing.Point(444, 407);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(251, 42);
+            this.button9.TabIndex = 96;
+            this.button9.Text = "Waste Stock Report ";
+            this.button9.UseVisualStyleBackColor = false;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // button5
             // 
@@ -175,18 +175,18 @@
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click_1);
             // 
-            // button9
+            // button6
             // 
-            this.button9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(226)))), ((int)(((byte)(240)))));
-            this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(88)))), ((int)(((byte)(108)))));
-            this.button9.Location = new System.Drawing.Point(126, 483);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(251, 42);
-            this.button9.TabIndex = 96;
-            this.button9.Text = "Waste Stock Report ";
-            this.button9.UseVisualStyleBackColor = false;
-            this.button9.Click += new System.EventHandler(this.button9_Click);
+            this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(226)))), ((int)(((byte)(240)))));
+            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(88)))), ((int)(((byte)(108)))));
+            this.button6.Location = new System.Drawing.Point(286, 483);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(251, 42);
+            this.button6.TabIndex = 97;
+            this.button6.Text = "Customer Ledger";
+            this.button6.UseVisualStyleBackColor = false;
+            this.button6.Click += new System.EventHandler(this.button6_Click_1);
             // 
             // frmReporting
             // 
@@ -217,7 +217,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button button6;
     }
 }

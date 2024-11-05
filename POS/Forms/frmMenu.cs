@@ -192,14 +192,14 @@ namespace POS.Forms
 
         private void button10_Click(object sender, EventArgs e)
         {
-            frmBackup obj = new frmBackup();
-            obj.TopLevel = false;
-            panelContainer.Controls.Clear();
-            panelContainer.Controls.Add(obj);
-            panelContainer.BringToFront();
-            obj.StartPosition = FormStartPosition.CenterParent;
-            obj.Dock = DockStyle.Fill;
-            obj.Show();
+            //frmBackup obj = new frmBackup();
+            //obj.TopLevel = false;
+            //panelContainer.Controls.Clear();
+            //panelContainer.Controls.Add(obj);
+            //panelContainer.BringToFront();
+            //obj.StartPosition = FormStartPosition.CenterParent;
+            //obj.Dock = DockStyle.Fill;
+            //obj.Show();
         }
 
         private void button28_Click(object sender, EventArgs e)

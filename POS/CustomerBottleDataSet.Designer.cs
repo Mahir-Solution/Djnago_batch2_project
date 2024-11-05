@@ -281,12 +281,6 @@ namespace POS {
             
             private global::System.Data.DataColumn columndate;
             
-            private global::System.Data.DataColumn columndeliver;
-            
-            private global::System.Data.DataColumn columnonshop;
-            
-            private global::System.Data.DataColumn columnrbottle;
-            
             private global::System.Data.DataColumn columnSID;
             
             private global::System.Data.DataColumn columnsname;
@@ -294,6 +288,10 @@ namespace POS {
             private global::System.Data.DataColumn columnCID;
             
             private global::System.Data.DataColumn columncname;
+            
+            private global::System.Data.DataColumn columndeliver;
+            
+            private global::System.Data.DataColumn columnrbottle;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -338,30 +336,6 @@ namespace POS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn deliverColumn {
-                get {
-                    return this.columndeliver;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn onshopColumn {
-                get {
-                    return this.columnonshop;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn rbottleColumn {
-                get {
-                    return this.columnrbottle;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public global::System.Data.DataColumn SIDColumn {
                 get {
                     return this.columnSID;
@@ -389,6 +363,22 @@ namespace POS {
             public global::System.Data.DataColumn cnameColumn {
                 get {
                     return this.columncname;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn deliverColumn {
+                get {
+                    return this.columndeliver;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn rbottleColumn {
+                get {
+                    return this.columnrbottle;
                 }
             }
             
@@ -429,17 +419,16 @@ namespace POS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public SalesmanViewRow AddSalesmanViewRow(System.DateTime date, string deliver, bool onshop, string rbottle, int SID, string sname, int CID, string cname) {
+            public SalesmanViewRow AddSalesmanViewRow(System.DateTime date, int SID, string sname, int CID, string cname, int deliver, int rbottle) {
                 SalesmanViewRow rowSalesmanViewRow = ((SalesmanViewRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         date,
-                        deliver,
-                        onshop,
-                        rbottle,
                         SID,
                         sname,
                         CID,
-                        cname};
+                        cname,
+                        deliver,
+                        rbottle};
                 rowSalesmanViewRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowSalesmanViewRow);
                 return rowSalesmanViewRow;
@@ -463,13 +452,12 @@ namespace POS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
                 this.columndate = base.Columns["date"];
-                this.columndeliver = base.Columns["deliver"];
-                this.columnonshop = base.Columns["onshop"];
-                this.columnrbottle = base.Columns["rbottle"];
                 this.columnSID = base.Columns["SID"];
                 this.columnsname = base.Columns["sname"];
                 this.columnCID = base.Columns["CID"];
                 this.columncname = base.Columns["cname"];
+                this.columndeliver = base.Columns["deliver"];
+                this.columnrbottle = base.Columns["rbottle"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -477,12 +465,6 @@ namespace POS {
             private void InitClass() {
                 this.columndate = new global::System.Data.DataColumn("date", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columndate);
-                this.columndeliver = new global::System.Data.DataColumn("deliver", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columndeliver);
-                this.columnonshop = new global::System.Data.DataColumn("onshop", typeof(bool), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnonshop);
-                this.columnrbottle = new global::System.Data.DataColumn("rbottle", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnrbottle);
                 this.columnSID = new global::System.Data.DataColumn("SID", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSID);
                 this.columnsname = new global::System.Data.DataColumn("sname", typeof(string), null, global::System.Data.MappingType.Element);
@@ -491,8 +473,10 @@ namespace POS {
                 base.Columns.Add(this.columnCID);
                 this.columncname = new global::System.Data.DataColumn("cname", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columncname);
-                this.columndeliver.MaxLength = 50;
-                this.columnrbottle.MaxLength = 50;
+                this.columndeliver = new global::System.Data.DataColumn("deliver", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columndeliver);
+                this.columnrbottle = new global::System.Data.DataColumn("rbottle", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnrbottle);
                 this.columnSID.AllowDBNull = false;
                 this.columnsname.MaxLength = 50;
                 this.columnCID.AllowDBNull = false;
@@ -655,54 +639,6 @@ namespace POS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string deliver {
-                get {
-                    try {
-                        return ((string)(this[this.tableSalesmanView.deliverColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'deliver\' in table \'SalesmanView\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableSalesmanView.deliverColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool onshop {
-                get {
-                    try {
-                        return ((bool)(this[this.tableSalesmanView.onshopColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'onshop\' in table \'SalesmanView\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableSalesmanView.onshopColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string rbottle {
-                get {
-                    try {
-                        return ((string)(this[this.tableSalesmanView.rbottleColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'rbottle\' in table \'SalesmanView\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableSalesmanView.rbottleColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public int SID {
                 get {
                     return ((int)(this[this.tableSalesmanView.SIDColumn]));
@@ -757,6 +693,38 @@ namespace POS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int deliver {
+                get {
+                    try {
+                        return ((int)(this[this.tableSalesmanView.deliverColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'deliver\' in table \'SalesmanView\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSalesmanView.deliverColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int rbottle {
+                get {
+                    try {
+                        return ((int)(this[this.tableSalesmanView.rbottleColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'rbottle\' in table \'SalesmanView\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableSalesmanView.rbottleColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsdateNull() {
                 return this.IsNull(this.tableSalesmanView.dateColumn);
             }
@@ -765,42 +733,6 @@ namespace POS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetdateNull() {
                 this[this.tableSalesmanView.dateColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsdeliverNull() {
-                return this.IsNull(this.tableSalesmanView.deliverColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetdeliverNull() {
-                this[this.tableSalesmanView.deliverColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsonshopNull() {
-                return this.IsNull(this.tableSalesmanView.onshopColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetonshopNull() {
-                this[this.tableSalesmanView.onshopColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsrbottleNull() {
-                return this.IsNull(this.tableSalesmanView.rbottleColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetrbottleNull() {
-                this[this.tableSalesmanView.rbottleColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -825,6 +757,30 @@ namespace POS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetcnameNull() {
                 this[this.tableSalesmanView.cnameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsdeliverNull() {
+                return this.IsNull(this.tableSalesmanView.deliverColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetdeliverNull() {
+                this[this.tableSalesmanView.deliverColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsrbottleNull() {
+                return this.IsNull(this.tableSalesmanView.rbottleColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetrbottleNull() {
+                this[this.tableSalesmanView.rbottleColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -988,13 +944,12 @@ namespace POS.CustomerBottleDataSetTableAdapters {
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "SalesmanView";
             tableMapping.ColumnMappings.Add("date", "date");
-            tableMapping.ColumnMappings.Add("deliver", "deliver");
-            tableMapping.ColumnMappings.Add("onshop", "onshop");
-            tableMapping.ColumnMappings.Add("rbottle", "rbottle");
             tableMapping.ColumnMappings.Add("SID", "SID");
             tableMapping.ColumnMappings.Add("sname", "sname");
             tableMapping.ColumnMappings.Add("CID", "CID");
             tableMapping.ColumnMappings.Add("cname", "cname");
+            tableMapping.ColumnMappings.Add("deliver", "deliver");
+            tableMapping.ColumnMappings.Add("rbottle", "rbottle");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -1011,8 +966,8 @@ namespace POS.CustomerBottleDataSetTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT date, deliver, onshop, rbottle, SID, sname, CID, cname FROM dbo.SalesmanVi" +
-                "ew WHERE CID = @cid AND date BETWEEN @sdate AND @edate";
+            this._commandCollection[0].CommandText = "SELECT        date, deliver, rbottle, SID, sname, CID, cname\r\nFROM            Sal" +
+                "esmanView\r\nWHERE        (CID = @cid) AND (date BETWEEN @sdate AND @edate)";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cid", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "CID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@sdate", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));

@@ -67,6 +67,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblnumber = new System.Windows.Forms.Label();
             this.txtsupsearch = new System.Windows.Forms.TextBox();
             this.btorder = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -135,6 +136,7 @@
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(333, 29);
             this.dateTimePicker1.TabIndex = 155;
+            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // panel2
             // 
@@ -549,6 +551,7 @@
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(226)))), ((int)(((byte)(240)))));
+            this.panel1.Controls.Add(this.lblnumber);
             this.panel1.Controls.Add(this.txtsupsearch);
             this.panel1.Controls.Add(this.btorder);
             this.panel1.Controls.Add(this.label2);
@@ -565,6 +568,16 @@
             this.panel1.Size = new System.Drawing.Size(805, 135);
             this.panel1.TabIndex = 159;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // lblnumber
+            // 
+            this.lblnumber.AutoSize = true;
+            this.lblnumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblnumber.ForeColor = System.Drawing.Color.Maroon;
+            this.lblnumber.Location = new System.Drawing.Point(565, 93);
+            this.lblnumber.Name = "lblnumber";
+            this.lblnumber.Size = new System.Drawing.Size(0, 25);
+            this.lblnumber.TabIndex = 161;
             // 
             // txtsupsearch
             // 
@@ -612,6 +625,7 @@
             this.cbcustomer.Name = "cbcustomer";
             this.cbcustomer.Size = new System.Drawing.Size(381, 32);
             this.cbcustomer.TabIndex = 123;
+            this.cbcustomer.SelectedIndexChanged += new System.EventHandler(this.cbcustomer_SelectedIndexChanged);
             // 
             // button7
             // 
@@ -816,5 +830,6 @@
         private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.TextBox txtstock;
         private System.Windows.Forms.Button btnremove;
+        private System.Windows.Forms.Label lblnumber;
     }
 }

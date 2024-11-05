@@ -24,7 +24,7 @@ namespace POS.Forms
             string connectionString = "Server=DESKTOP-KFIITTP;Database=waterdb;User Id=sa;Password=wasi786;";
 
             // Define the backup directory and file name
-            string backupDirectory = @"D:\RelianceBackups";
+            string backupDirectory = @"F:\RW_Backups";
             string backupFileReliance = $"{backupDirectory}\\waterdb_{DateTime.Now:yyyyMMdd_HHmmss}.bak";
 
             // Create the backup directory if it does not exist
@@ -47,7 +47,7 @@ namespace POS.Forms
                         command.ExecuteNonQuery();
                     }
                 }
-                MessageBox.Show($"Database backup successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show($"Database backup successful! at Google Cloud Thanks Using Our Best Services", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (SqlException sqlEx)
             {

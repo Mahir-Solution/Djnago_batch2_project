@@ -23,7 +23,13 @@ namespace POS.Model
         {
             OID = -1;
         }
-        public Order(salesman sl,Customer cus, User u,string on,DateTime dt)
+        public Order(Customer cus)
+        {
+            
+            customer = cus;
+            
+        }
+        public Order(salesman sl, Customer cus, User u, string on, DateTime dt)
         {
             slman = sl;
             customer = cus;
@@ -139,6 +145,23 @@ namespace POS.Model
                 MessageBox.Show(obj.Message);
             }
             return " ";
+        }
+        public int fetch_order_last_price()
+        {
+            string qeury = @"
+                            select o.OID,o.[date],od.price
+                            from tblorder o inner join tbleorderdetail od on o.OID = od.OID
+                            where o.CID = @cid AND o.[date] = ( select MAX(o2.[date]) from tblorder o2 where o2.CID = @cid)";
+            SqlCommand cmd = new SqlCommand(qeury);
+            cmd.Parameters.AddWithValue("@cid", this.customer.CID);
+            DatabaseHandler db = new DatabaseHandler();
+            DataTable dt = db.GetData(cmd);
+            if(dt.Rows.Count > 0)
+            {
+                customer = new Customer(dt.Rows[0].Field<int>("CID"));
+                
+            }
+            return  -1;
         }
 
     }

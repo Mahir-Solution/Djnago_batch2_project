@@ -30,16 +30,27 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.WasteStockDataSet = new POS.WasteStockDataSet();
             this.WasteStockViewBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.WasteStockDataSet = new POS.WasteStockDataSet();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.WasteStockViewTableAdapter = new POS.WasteStockDataSetTableAdapters.WasteStockViewTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.WasteStockDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.WasteStockViewBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.WasteStockDataSet)).BeginInit();
             this.SuspendLayout();
+            // 
+            // WasteStockViewBindingSource
+            // 
+            this.WasteStockViewBindingSource.DataMember = "WasteStockView";
+            this.WasteStockViewBindingSource.DataSource = this.WasteStockDataSet;
+            // 
+            // WasteStockDataSet
+            // 
+            this.WasteStockDataSet.DataSetName = "WasteStockDataSet";
+            this.WasteStockDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // reportViewer1
             // 
+            this.reportViewer1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(226)))), ((int)(((byte)(240)))));
             this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
             reportDataSource1.Name = "WasteStockDataSet";
             reportDataSource1.Value = this.WasteStockViewBindingSource;
@@ -49,16 +60,6 @@
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.Size = new System.Drawing.Size(789, 465);
             this.reportViewer1.TabIndex = 0;
-            // 
-            // WasteStockDataSet
-            // 
-            this.WasteStockDataSet.DataSetName = "WasteStockDataSet";
-            this.WasteStockDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // WasteStockViewBindingSource
-            // 
-            this.WasteStockViewBindingSource.DataMember = "WasteStockView";
-            this.WasteStockViewBindingSource.DataSource = this.WasteStockDataSet;
             // 
             // WasteStockViewTableAdapter
             // 
@@ -70,11 +71,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(789, 465);
             this.Controls.Add(this.reportViewer1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "WasteSticjForm";
             this.Text = "WasteSticjForm";
             this.Load += new System.EventHandler(this.WasteSticjForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.WasteStockDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.WasteStockViewBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.WasteStockDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -100,6 +100,8 @@ namespace POS.Forms
                 txtreturn.Text = x.ToString();
                 txtordertotal.Text = x.ToString();
                 txtgrandtotal.Text = x.ToString();
+
+                cbproduct.SelectedText = "full water";
             }
         }
 
@@ -275,13 +277,15 @@ namespace POS.Forms
         {
             try
             {
-                DataTable dataTable = Customer.CustomerSearch(this.txtsupsearch.Text.Trim());
-                DataRow dataRow = dataTable.NewRow();
                 
-                dataTable.Rows.InsertAt(dataRow, 0);
-                this.cbcustomer.ValueMember = "CID";
-                this.cbcustomer.DisplayMember = "cname";
-                this.cbcustomer.DataSource = dataTable;
+                    DataTable dataTable = Customer.CustomerSearch(this.txtsupsearch.Text.Trim());
+                    DataRow dataRow = dataTable.NewRow();
+
+                    dataTable.Rows.InsertAt(dataRow, 0);
+                    this.cbcustomer.ValueMember = "CID";
+                    this.cbcustomer.DisplayMember = "cname";
+                    this.cbcustomer.DataSource = dataTable;
+                
             }
             catch (Exception obj)
             {
@@ -329,9 +333,15 @@ namespace POS.Forms
             try
             {
                 int pid = Convert.ToInt32(cbproduct.SelectedValue);
+                int cid = Convert.ToInt32(cbcustomer.SelectedValue);
+                DateTime date = dateTimePicker1.Value.Date;
                 if (pid > 0)
                 {
-                    
+                    //get last price of a product
+                    OrderDetail obj = new OrderDetail();
+                    obj.fetch_order_last_price(cid,pid);
+                    txtprice.Text = obj.price.ToString();
+
 
                     //get stock from stock table
                     Stock obj1 = new Stock();
@@ -494,6 +504,38 @@ namespace POS.Forms
         private void cbsource_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void cbcustomer_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int cid = -1;
+            try
+            {
+                cid = Convert.ToInt32(cbcustomer.SelectedValue);
+            }
+            catch (Exception)
+            {
+                cid = -1;
+            }
+            try
+            {
+                
+                if (cid > 0)
+                {
+                    Customer obj = new Customer(cid);
+                    lblnumber.Text = obj.cell;
+                }
+              
+            }
+            catch(Exception obj)
+            {
+                MessageBox.Show(obj.Message);
+            }
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+           // selectedDate = dateTimePicker1.Value;
         }
     }
 }

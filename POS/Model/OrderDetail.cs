@@ -141,7 +141,7 @@ namespace POS.Model
         {
             try
             {
-                string query = "select od.odid AS ID, p.pname AS Product,od.qty AS Quantity,od.total AS Total from tblproduct p inner join tbleorderdetail od on p.PID = od.PID where od.OID = @oid";
+                string query = "select od.odid AS ID,o.oid,o.date AS Order_Date, p.pname AS Product,od.qty AS Quantity,od.price AS Price,od.total AS Total from tblproduct p inner join tbleorderdetail od on p.PID = od.PID inner join tblorder o on o.oid = od.oid where od.OID = @oid";
                 SqlCommand cmd = new SqlCommand(query);
                 cmd.Parameters.AddWithValue("@oid", oid);
                 DatabaseHandler db = new DatabaseHandler();
@@ -174,6 +174,34 @@ namespace POS.Model
                 MessageBox.Show(obj.Message);
             }
             return 0;
+        }
+
+        public int fetch_order_last_price(int cid,int pid)
+        {
+            string qeury = @"
+                            SELECT o.OID, o.[date], od.price
+FROM tblorder o
+INNER JOIN tbleorderdetail od ON o.OID = od.OID
+WHERE o.CID = @cid 
+  AND o.[date] = (
+      SELECT MAX(o2.[date]) 
+      FROM tblorder o2 
+      WHERE o2.CID = @cid
+  )
+  AND od.pid = @pid;
+";
+            SqlCommand cmd = new SqlCommand(qeury);
+            cmd.Parameters.AddWithValue("@cid",cid);
+            cmd.Parameters.AddWithValue("@pid", pid);
+            //cmd.Parameters.AddWithValue("@date", date);
+            DatabaseHandler db = new DatabaseHandler();
+            DataTable dt = db.GetData(cmd);
+            if (dt.Rows.Count > 0)
+            {
+                price = dt.Rows[0].Field<int>("price");
+
+            }
+            return -1;
         }
 
 

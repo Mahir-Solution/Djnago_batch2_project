@@ -62,10 +62,9 @@ E:\POS_Water\POS\obj\Debug\POS.Properties.Resources.resources
 E:\POS_Water\POS\obj\Debug\POS.saleform.resources
 E:\POS_Water\POS\obj\Debug\POS.Salesmanform.resources
 E:\POS_Water\POS\obj\Debug\POS.StockForm.resources
+E:\POS_Water\POS\obj\Debug\POS.WasteSticjForm.resources
 E:\POS_Water\POS\obj\Debug\POS.csproj.GenerateResource.Cache
 E:\POS_Water\POS\obj\Debug\RdlCompile.cache
 E:\POS_Water\POS\obj\Debug\RdlCompile.compiled
 E:\POS_Water\POS\obj\Debug\POS.exe
 E:\POS_Water\POS\obj\Debug\POS.pdb
-E:\POS_Water\POS\obj\Debug\POS.csprojResolveAssemblyReference.cache
-E:\POS_Water\POS\obj\Debug\POS.WasteSticjForm.resources

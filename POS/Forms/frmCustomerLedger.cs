@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using POS.Model;
 using System.Data.SqlClient;
-
+using DGVPrinterHelper;
 namespace POS.Forms
 {
     public partial class frmCustomerLedger : Form
@@ -147,6 +147,16 @@ namespace POS.Forms
             {
                 MessageBox.Show(obj.Message);
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //DGVPrinterHelper obj = new DGVPrinterHelper();
+            DGVPrinter obj = new DGVPrinter();
+            obj.Title = "Customer Ledger";
+            obj.SubTitle = "DATE_START " +"(" + sdate.Value.Date + ")"+ "   "+ "END_DATE" + "("+edate.Value.Date + ")" ; 
+            obj.PrintDataGridView(dataGridView1);
+            obj.FooterSpacing = 23;
         }
     }
 }
